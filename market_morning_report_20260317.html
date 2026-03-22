@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金融市场早报 · 2026年3月17日</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg2: #161b22;
+    --bg3: #21262d;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text2: #8b949e;
+    --green: #3fb950;
+    --red: #f85149;
+    --yellow: #d29922;
+    --blue: #58a6ff;
+    --purple: #bc8cff;
+    --orange: #ffa657;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; font-size: 13px; line-height: 1.6; }
+  .header { background: linear-gradient(135deg, #0d1117 0%, #1a2332 50%, #0d1117 100%); border-bottom: 1px solid var(--border); padding: 24px 32px 20px; }
+  .header-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .header-title { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: 1px; }
+  .header-sub { color: var(--text2); font-size: 12px; margin-top: 4px; }
+  .header-badge { background: var(--bg3); border: 1px solid var(--border); border-radius: 20px; padding: 6px 14px; font-size: 12px; color: var(--blue); }
+  .container { max-width: 1200px; margin: 0 auto; padding: 20px 24px; }
+  .section { margin-bottom: 20px; }
+  .section-title { font-size: 13px; font-weight: 600; color: var(--text2); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .section-title::before { content: ''; width: 3px; height: 14px; background: var(--blue); border-radius: 2px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+  .index-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+  .index-name { font-size: 12px; color: var(--text2); margin-bottom: 4px; }
+  .index-val { font-size: 20px; font-weight: 700; }
+  .index-chg { font-size: 12px; margin-top: 3px; }
+  .index-meta { font-size: 11px; color: var(--text2); margin-top: 6px; }
+  .up { color: var(--red); }
+  .down { color: var(--green); }
+  .flat { color: var(--text2); }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; padding: 7px 10px; color: var(--text2); font-size: 11px; font-weight: 600; border-bottom: 1px solid var(--border); }
+  td { padding: 6px 10px; border-bottom: 1px solid #1c2128; font-size: 12px; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #1c2128; }
+  .tag { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 10px; font-weight: 600; }
+  .tag-up { background: rgba(248,81,73,0.15); color: var(--red); }
+  .tag-down { background: rgba(63,185,80,0.15); color: var(--green); }
+  .tag-n { background: rgba(88,166,255,0.15); color: var(--blue); }
+  .limit-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .bar-track { flex: 1; height: 6px; background: var(--bg3); border-radius: 3px; overflow: hidden; position: relative; }
+  .bar-up { height: 100%; background: var(--red); border-radius: 3px; }
+  .bar-down { height: 100%; background: var(--green); border-radius: 3px; }
+  .stat-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .stat-item { background: var(--bg3); border-radius: 6px; padding: 10px 12px; }
+  .stat-label { font-size: 11px; color: var(--text2); }
+  .stat-val { font-size: 16px; font-weight: 700; margin-top: 2px; }
+  .ladder { display: flex; flex-direction: column; gap: 6px; }
+  .ladder-row { display: flex; align-items: center; gap: 8px; }
+  .ladder-n { width: 24px; height: 24px; background: var(--red); color: white; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; }
+  .ladder-stocks { display: flex; flex-wrap: wrap; gap: 4px; }
+  .ladder-stock { background: rgba(248,81,73,0.1); border: 1px solid rgba(248,81,73,0.25); color: var(--text); padding: 2px 7px; border-radius: 3px; font-size: 11px; }
+  .fund-card { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #1c2128; }
+  .fund-card:last-child { border-bottom: none; }
+  .fund-label { color: var(--text2); font-size: 12px; }
+  .fund-val { font-size: 14px; font-weight: 600; }
+  .bar-h { height: 4px; border-radius: 2px; margin-top: 4px; }
+  .futures-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .fut-card { background: var(--bg3); border-radius: 6px; padding: 10px 12px; }
+  .fut-name { font-size: 11px; color: var(--text2); }
+  .fut-price { font-size: 15px; font-weight: 700; margin: 3px 0; }
+  .fut-detail { font-size: 11px; color: var(--text2); }
+  .event-list { display: flex; flex-direction: column; gap: 6px; }
+  .event-item { display: flex; gap: 10px; align-items: flex-start; }
+  .event-time { font-size: 11px; color: var(--blue); white-space: nowrap; min-width: 40px; }
+  .event-country { font-size: 10px; background: var(--bg3); border-radius: 3px; padding: 1px 5px; color: var(--text2); white-space: nowrap; }
+  .event-name { font-size: 12px; }
+  .shibor-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+  .shibor-item { background: var(--bg3); border-radius: 6px; padding: 8px; text-align: center; }
+  .shibor-term { font-size: 10px; color: var(--text2); margin-bottom: 3px; }
+  .shibor-rate { font-size: 13px; font-weight: 600; color: var(--blue); }
+  .global-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .global-card { background: var(--bg3); border-radius: 6px; padding: 8px 10px; }
+  .global-name { font-size: 10px; color: var(--text2); margin-bottom: 2px; }
+  .global-val { font-size: 13px; font-weight: 600; }
+  .global-chg { font-size: 11px; }
+  .gold-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .gold-card { background: var(--bg3); border-radius: 6px; padding: 10px; }
+  .gold-name { font-size: 11px; color: var(--text2); }
+  .gold-price { font-size: 16px; font-weight: 700; color: var(--yellow); margin: 3px 0; }
+  .gold-chg { font-size: 11px; }
+  .divider { height: 1px; background: var(--border); margin: 8px 0; }
+  .industry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .ind-section { }
+  .ind-title { font-size: 11px; color: var(--text2); margin-bottom: 6px; }
+  .ind-item { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; border-bottom: 1px solid #1c2128; }
+  .ind-item:last-child { border-bottom: none; }
+  .ind-name { font-size: 12px; }
+  .ind-lead { font-size: 10px; color: var(--text2); }
+  .ind-pct { font-size: 12px; font-weight: 600; }
+  .footer { border-top: 1px solid var(--border); padding: 16px 32px; text-align: center; color: var(--text2); font-size: 11px; }
+  @media(max-width: 768px) {
+    .grid-4, .futures-grid, .global-grid, .shibor-grid { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <div class="header-title">📈 金融市场早报</div>
+      <div class="header-sub">2026年3月17日（周二）· 昨日行情回顾 · 今日盘前参考</div>
+    </div>
+    <div class="header-badge">⏰ 08:30 自动生成</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- A股主要指数 -->
+  <div class="section">
+    <div class="section-title">A股主要指数（3月16日收盘）</div>
+    <div class="grid-4">
+      <div class="index-card">
+        <div class="index-name">上证指数</div>
+        <div class="index-val down">4,084.79</div>
+        <div class="index-chg down">▼ -10.66（-0.26%）</div>
+        <div class="index-meta">成交额 1.04万亿</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">深证成指</div>
+        <div class="index-val up">14,307.58</div>
+        <div class="index-chg up">▲ +26.80（+0.19%）</div>
+        <div class="index-meta">成交额 1.29万亿</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">创业板指</div>
+        <div class="index-val up" style="color:#f85149">3,357.02</div>
+        <div class="index-chg up">▲ +46.74（+1.41%）</div>
+        <div class="index-meta">成交额 5,558亿</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">科创50</div>
+        <div class="index-val up">1,384.99</div>
+        <div class="index-chg up">▲ +11.35（+0.83%）</div>
+        <div class="index-meta">成交额 738亿</div>
+      </div>
+    </div>
+    <div style="margin-top: 10px;">
+      <div class="index-card">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <div class="index-name">沪深300</div>
+            <div class="index-val flat" style="font-size:17px; color:#e6edf3">4,671.56</div>
+            <div class="index-chg flat">▲ +2.42（+0.05%）</div>
+          </div>
+          <div style="text-align:right; color: var(--text2); font-size: 12px;">
+            <div>成交额 5,988亿</div>
+            <div style="margin-top:4px;">大盘蓝筹 · 基本持平</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 资金流向 -->
+  <div class="section">
+    <div class="section-title">资金流向（3月16日）</div>
+    <div class="grid-2">
+      <!-- 北向资金 -->
+      <div class="card">
+        <div style="font-size:12px; color:var(--text2); margin-bottom:10px;">🌏 北向资金（沪深港通）</div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <div>
+            <div style="font-size:22px; font-weight:700; color:var(--red);">+302.80亿</div>
+            <div style="font-size:11px; color:var(--text2); margin-top:2px;">全天净流入</div>
+          </div>
+          <div style="font-size:28px;">🔥</div>
+        </div>
+        <div class="divider"></div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px;">
+          <div>
+            <div style="font-size:11px; color:var(--text2);">沪股通</div>
+            <div style="font-size:14px; font-weight:600; color:var(--red);">+140,993.68万</div>
+          </div>
+          <div>
+            <div style="font-size:11px; color:var(--text2);">深股通</div>
+            <div style="font-size:14px; font-weight:600; color:var(--red);">+161,811.24万</div>
+          </div>
+        </div>
+        <div style="margin-top:8px; font-size:11px; color:var(--text2);">南向资金：+53,052.76万（港股通）</div>
+      </div>
+      <!-- 大盘资金 -->
+      <div class="card">
+        <div style="font-size:12px; color:var(--text2); margin-bottom:10px;">📊 大盘资金（东财口径）</div>
+        <div class="fund-card">
+          <div>
+            <div class="fund-label">主力净流入</div>
+            <div style="font-size:10px; color:var(--text2);">超大单+大单</div>
+          </div>
+          <div class="fund-val down">-430.85亿</div>
+        </div>
+        <div class="fund-card">
+          <div><div class="fund-label">超大单</div></div>
+          <div class="fund-val down">-254.46亿</div>
+        </div>
+        <div class="fund-card">
+          <div><div class="fund-label">大单</div></div>
+          <div class="fund-val down">-176.39亿</div>
+        </div>
+        <div class="fund-card">
+          <div><div class="fund-label">中单</div></div>
+          <div class="fund-val down">-20.80亿</div>
+        </div>
+        <div class="fund-card" style="border-bottom:none">
+          <div><div class="fund-label">小单（散户）</div></div>
+          <div class="fund-val up">+451.65亿</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 涨跌停统计 -->
+  <div class="section">
+    <div class="section-title">涨跌停统计（3月16日）</div>
+    <div class="grid-2">
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <div>
+            <div style="font-size:11px; color:var(--text2);">涨停板</div>
+            <div style="font-size:26px; font-weight:700; color:var(--red);">44只</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:11px; color:var(--text2);">跌停板</div>
+            <div style="font-size:26px; font-weight:700; color:var(--green);">5只</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:11px; color:var(--text2);">情绪比</div>
+            <div style="font-size:20px; font-weight:700; color:var(--yellow);">8.8:1</div>
+          </div>
+        </div>
+        <div style="background:var(--bg3); border-radius:4px; overflow:hidden; height:8px; display:flex;">
+          <div style="width:89.8%; background:var(--red);"></div>
+          <div style="width:10.2%; background:var(--green);"></div>
+        </div>
+        <div class="divider" style="margin-top:10px;"></div>
+        <div style="font-size:11px; color:var(--text2); margin-top:8px;">跌停股：豫能控股(-9.97% 2板) · 英威腾(-10.04%) · 东方铁塔(-10.00%) · 锋龙股份(-10.00%) · 中国电建(-10.01%)</div>
+      </div>
+      <div class="card">
+        <div style="font-size:11px; color:var(--text2); margin-bottom:8px;">🪜 连板天梯</div>
+        <div class="ladder">
+          <div class="ladder-row">
+            <div class="ladder-n">5</div>
+            <div class="ladder-stocks">
+              <span class="ladder-stock">ST金鸿</span>
+              <span class="ladder-stock">*ST熊猫</span>
+            </div>
+          </div>
+          <div class="ladder-row">
+            <div class="ladder-n">4</div>
+            <div class="ladder-stocks">
+              <span class="ladder-stock">*ST景峰</span>
+              <span class="ladder-stock">*ST正平</span>
+            </div>
+          </div>
+          <div class="ladder-row">
+            <div class="ladder-n">3</div>
+            <div class="ladder-stocks">
+              <span class="ladder-stock">法尔胜</span>
+              <span class="ladder-stock">三房巷</span>
+            </div>
+          </div>
+          <div class="ladder-row">
+            <div class="ladder-n">2</div>
+            <div class="ladder-stocks">
+              <span class="ladder-stock">*ST双成</span>
+              <span class="ladder-stock">*ST建艺</span>
+              <span class="ladder-stock">赤天化</span>
+              <span class="ladder-stock">京投发展</span>
+              <span class="ladder-stock">锡华科技</span>
+              <span class="ladder-stock">ST起步</span>
+              <span class="ladder-stock">亚翔集成</span>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div style="font-size:11px; color:var(--text2);">20cm涨停：朗科科技(+20%) · 琏升科技(+19.96%) · 金太阳(+20.01%)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 行业板块 -->
+  <div class="section">
+    <div class="section-title">行业板块涨跌（同花顺 · 3月16日）</div>
+    <div class="card">
+      <div class="industry-grid">
+        <div class="ind-section">
+          <div class="ind-title">▲ 涨幅前10</div>
+          <div class="ind-item">
+            <div><div class="ind-name">元件</div><div class="ind-lead">本川智能</div></div>
+            <div class="ind-pct up">+3.01%</div>
+          </div>
+          <div class="ind-item">
+            <div><div class="ind-name">其他电子</div><div class="ind-lead">雅创电子</div></div>
+            <div class="ind-pct up">+2.48%</div>
+          </div>
+          <div class="ind-item">
+            <div><div class="ind-name">半导体</div><div class="ind-lead">佰维存储</div></div>
+            <div class="ind-pct up">+2.37%</div>
+          </div>
+          <div class="ind-item">
+            <div><div class="ind-name">互联网电商</div><div class="ind-lead">行云科技</div></div>
+            <div class="ind-pct up">+2.35%</div>
+          </div>
+          <div class="ind-item">
+            <div><div class="ind-name">港口航运</div><div class="ind-lead">国航远洋</div></div>
+            <div class="ind-pct up">+2.32%</div>
+          </div>
+          <div class="ind-item">
+            <div><div class="ind-name">种植业与林业</div><div class="ind-lead">农发种业</div></div>
+            <div class="ind-pct up">+2.20%</div>
+          </div>
+          <div class="ind-item">
+            <div><div class="ind-name">白酒</div><div class="ind-lead">皇台酒业</div></div>
+            <div class="ind-pct up">+1.79%</div>
+          </div>
+          <div class="ind-item">
+            <div><div class="ind-name">通信服务</div><div class="ind-lead">二六三</div></div>
+            <div class="ind-pct up">+1.43%</div>
+          </div>
+          <div class="ind-item">
+            <div><div class="ind-name">文化传媒</div><div class="ind-lead">天地在线</div></div>
+            <div class="ind-pct up">+1.41%</div>
+          </div>
+          <div class="ind-item">
+            <div><div class="ind-name">食品加工制造</div><div class="ind-lead">西王食品</div></div>
+            <div class="ind-pct up">+1.32%</div>
+          </div>
+        </div>
+        <div class="ind-section">
+          <div class="ind-title">▼ 跌幅前10</div>
+          <div class="ind-item">
+            <div><div class="ind-name">贵金属</div><div class="ind-lead">四川黄金</div></div>
+            <div class="ind-pct down">-3.74%</div>
+          </div>
+          <div class="ind-item">
+            <div><div class="ind-name">钢铁</div><div class="ind-lead">金洲管道</div></div>
+            <div class="ind-pct down">-3.60%</div>
+          </div>
+          <div class="ind-item">
+            <div><div class="ind-name">煤炭开采加工</div><div class="ind-lead">华电能源</div></div>
+            <div class="ind-pct down">-2.59%</div>
+          </div>
+          <div class="ind-item">
+            <div><div class="ind-name">农化制品</div><div class="ind-lead">赤天化</div></div>
+            <div class="ind-pct down">-2.19%</div>
+          </div>
+          <div class="ind-item">
+            <div><div class="ind-name">电力</div><div class="ind-lead">华电辽能</div></div>
+            <div class="ind-pct down">-2.20%</div>
+          </div>
+          <div class="ind-item">
+            <div><div class="ind-name">能源金属</div><div class="ind-lead">融捷股份</div></div>
+            <div class="ind-pct down">-2.12%</div>
+          </div>
+          <div class="ind-item">
+            <div><div class="ind-name">工业金属</div><div class="ind-lead">利源股份</div></div>
+            <div class="ind-pct down">-1.85%</div>
+          </div>
+          <div class="ind-item">
+            <div><div class="ind-name">小金属</div><div class="ind-lead">东方钽业</div></div>
+            <div class="ind-pct down">-1.81%</div>
+          </div>
+          <div class="ind-item">
+            <div><div class="ind-name">化学原料</div><div class="ind-lead">金牛化工</div></div>
+            <div class="ind-pct down">-1.66%</div>
+          </div>
+          <div class="ind-item">
+            <div><div class="ind-name">光伏设备</div><div class="ind-lead">琏升科技</div></div>
+            <div class="ind-pct down">-1.16%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 期货市场 -->
+  <div class="section">
+    <div class="section-title">期货主力合约（3月16日收盘）</div>
+    <div class="futures-grid">
+      <div class="fut-card">
+        <div class="fut-name">沪铜主力 CU2604</div>
+        <div class="fut-price down">99,720</div>
+        <div class="fut-detail down">▼ -880（-0.88%）</div>
+        <div style="margin-top:4px; font-size:10px; color:var(--text2);">成交 12.9万手 · 持仓 19.3万手 ↑+2428</div>
+      </div>
+      <div class="fut-card">
+        <div class="fut-name">螺纹钢主力 RB2605</div>
+        <div class="fut-price down">3,140</div>
+        <div class="fut-detail down">▼ -1（-0.03%）</div>
+        <div style="margin-top:4px; font-size:10px; color:var(--text2);">成交 73.6万手 · 持仓 157.4万手 ↓-5.3万</div>
+      </div>
+      <div class="fut-card">
+        <div class="fut-name">铁矿石主力 I2605</div>
+        <div class="fut-price down">809</div>
+        <div class="fut-detail down">▼ -6（-0.74%）</div>
+        <div style="margin-top:4px; font-size:10px; color:var(--text2);">成交 32.0万手 · 持仓 45.9万手 ↓-1.3万</div>
+      </div>
+      <div class="fut-card">
+        <div class="fut-name">黄金期货 AU2604</div>
+        <div class="fut-price down">1,118.34</div>
+        <div class="fut-detail down">▼ -23.26（-2.04%）</div>
+        <div style="margin-top:4px; font-size:10px; color:var(--text2);">成交 21.4万手 · 持仓 9.5万手 ↓-8146</div>
+      </div>
+      <div class="fut-card">
+        <div class="fut-name">豆粕主力 M2605</div>
+        <div class="fut-price down">3,071</div>
+        <div class="fut-detail down">▼ -61（-1.95%）</div>
+        <div style="margin-top:4px; font-size:10px; color:var(--text2);">成交 213.2万手 · 持仓 197.8万手 ↑+6123</div>
+      </div>
+      <div class="fut-card">
+        <div class="fut-name">玉米主力 C2605</div>
+        <div class="fut-price down">2,379</div>
+        <div class="fut-detail down">▼ -10（-0.42%）</div>
+        <div style="margin-top:4px; font-size:10px; color:var(--text2);">成交 66.7万手 · 持仓 137.9万手 ↓-2.6万</div>
+      </div>
+      <div class="fut-card">
+        <div class="fut-name">原油主力 SC2604</div>
+        <div class="fut-price up">765.5</div>
+        <div class="fut-detail up">▲ +12.4（+1.65%）</div>
+        <div style="margin-top:4px; font-size:10px; color:var(--text2);">成交 10.1万手 · 持仓 2.1万手 ↓-8985</div>
+      </div>
+      <div class="fut-card" style="background:rgba(88,166,255,0.05); border-color:rgba(88,166,255,0.2);">
+        <div class="fut-name" style="color:var(--blue);">📝 期货小结</div>
+        <div style="font-size:11px; color:var(--text2); margin-top:6px; line-height:1.7;">
+          原油独涨 +1.65%<br>
+          金属系全线承压<br>
+          黄金期货大跌 -2.04%<br>
+          农产品豆粕大跌 -1.95%
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 海外市场 -->
+  <div class="section">
+    <div class="section-title">海外主要市场（3月16日）</div>
+    <div class="card">
+      <div style="font-size:11px; color:var(--text2); margin-bottom:10px;">亚太市场</div>
+      <div class="global-grid">
+        <div class="global-card">
+          <div class="global-name">恒生指数</div>
+          <div class="global-val up">25,834</div>
+          <div class="global-chg up">▲ +368.42（+1.45%）</div>
+        </div>
+        <div class="global-card">
+          <div class="global-name">恒生科技</div>
+          <div class="global-val up">5,111.78</div>
+          <div class="global-chg up">▲ +133.70（+2.69%）</div>
+        </div>
+        <div class="global-card">
+          <div class="global-name">H股指数</div>
+          <div class="global-val up">2,873.56</div>
+          <div class="global-chg up">▲ +30.42（+1.07%）</div>
+        </div>
+        <div class="global-card">
+          <div class="global-name">富时A50</div>
+          <div class="global-val up">14,920.59</div>
+          <div class="global-chg up">▲ +112.45（+0.76%）</div>
+        </div>
+        <div class="global-card">
+          <div class="global-name">日经225</div>
+          <div class="global-val down">53,751</div>
+          <div class="global-chg down">▼ -68.46（-0.13%）</div>
+        </div>
+        <div class="global-card">
+          <div class="global-name">韩国综合</div>
+          <div class="global-val up">5,549.85</div>
+          <div class="global-chg up">▲ +62.61（+1.14%）</div>
+        </div>
+        <div class="global-card">
+          <div class="global-name">台湾加权</div>
+          <div class="global-val down">33,342.51</div>
+          <div class="global-chg down">▼ -57.81（-0.17%）</div>
+        </div>
+        <div class="global-card">
+          <div class="global-name">印度SENSEX</div>
+          <div class="global-val up">75,502.88</div>
+          <div class="global-chg up">▲ +938.94（+1.26%）</div>
+        </div>
+        <div class="global-card">
+          <div class="global-name">澳大利亚AS51</div>
+          <div class="global-val down">8,583.10</div>
+          <div class="global-chg down">▼ -32.00（-0.37%）</div>
+        </div>
+        <div class="global-card">
+          <div class="global-name">马来西亚</div>
+          <div class="global-val down">1,696.56</div>
+          <div class="global-chg down">▼ -2.29（-0.13%）</div>
+        </div>
+      </div>
+      <div class="divider" style="margin: 10px 0;"></div>
+      <div style="font-size:11px; color:var(--text2); margin-bottom:8px;">欧美市场</div>
+      <div class="global-grid">
+        <div class="global-card">
+          <div class="global-name">标普500</div>
+          <div class="global-val up">6,699.38</div>
+          <div class="global-chg up">▲ +67.19（+1.01%）</div>
+        </div>
+        <div class="global-card">
+          <div class="global-name">纳斯达克</div>
+          <div class="global-val up">22,374.18</div>
+          <div class="global-chg up">▲ +268.82（+1.22%）</div>
+        </div>
+        <div class="global-card">
+          <div class="global-name">道琼斯</div>
+          <div class="global-val up">46,946.41</div>
+          <div class="global-chg up">▲ +387.94（+0.83%）</div>
+        </div>
+        <div class="global-card">
+          <div class="global-name">罗素2000</div>
+          <div class="global-val up">2,503.29</div>
+          <div class="global-chg up">▲ +23.24（+0.94%）</div>
+        </div>
+        <div class="global-card">
+          <div class="global-name">德国DAX</div>
+          <div class="global-val up">23,564.01</div>
+          <div class="global-chg up">▲ +116.72（+0.50%）</div>
+        </div>
+        <div class="global-card">
+          <div class="global-name">法国CAC40</div>
+          <div class="global-val up">7,935.97</div>
+          <div class="global-chg up">▲ +24.44（+0.31%）</div>
+        </div>
+        <div class="global-card">
+          <div class="global-name">英国富时100</div>
+          <div class="global-val up">10,317.69</div>
+          <div class="global-chg up">▲ +56.54（+0.55%）</div>
+        </div>
+        <div class="global-card">
+          <div class="global-name">欧元区STOXX50</div>
+          <div class="global-val up">5,739.01</div>
+          <div class="global-chg up">▲ +22.41（+0.39%）</div>
+        </div>
+        <div class="global-card">
+          <div class="global-name">加拿大S&P/TSX</div>
+          <div class="global-val down">1,012.17</div>
+          <div class="global-chg down">▼ -5.94（-0.58%）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 黄金 & Shibor -->
+  <div class="section">
+    <div class="section-title">黄金现货 & Shibor利率（3月16日）</div>
+    <div class="grid-2">
+      <div class="card">
+        <div style="font-size:11px; color:var(--text2); margin-bottom:10px;">🥇 上海金交所黄金现货</div>
+        <div class="gold-grid" style="grid-template-columns: repeat(2, 1fr);">
+          <div class="gold-card">
+            <div class="gold-name">Au99.99（主力）</div>
+            <div class="gold-price">1,114.61</div>
+            <div class="gold-chg down">▼ -16.48（-1.46%）</div>
+          </div>
+          <div class="gold-card">
+            <div class="gold-name">iAu99.99</div>
+            <div class="gold-price">1,113.95</div>
+            <div class="gold-chg down">▼ -13.29</div>
+          </div>
+          <div class="gold-card">
+            <div class="gold-name">Au(T+D)</div>
+            <div class="gold-price">1,114.99</div>
+            <div class="gold-chg down">▼ -21.58（-1.90%）</div>
+          </div>
+          <div class="gold-card">
+            <div class="gold-name">Ag99.99（白银）</div>
+            <div class="gold-price" style="font-size:13px;">20.711元/克</div>
+            <div class="gold-chg down">▼ -1.106（-5.07%）</div>
+          </div>
+        </div>
+        <div style="margin-top:8px; font-size:11px; color:var(--text2); padding: 6px 10px; background:rgba(248,81,73,0.05); border-radius:4px;">
+          ⚠️ 贵金属昨日全线重挫，黄金板块跌幅-3.74%领跌全市场
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-size:11px; color:var(--text2); margin-bottom:10px;">💰 Shibor利率（3月16日）</div>
+        <div class="shibor-grid">
+          <div class="shibor-item">
+            <div class="shibor-term">隔夜</div>
+            <div class="shibor-rate">1.320%</div>
+          </div>
+          <div class="shibor-item">
+            <div class="shibor-term">1周</div>
+            <div class="shibor-rate">1.441%</div>
+          </div>
+          <div class="shibor-item">
+            <div class="shibor-term">2周</div>
+            <div class="shibor-rate">1.495%</div>
+          </div>
+          <div class="shibor-item">
+            <div class="shibor-term">1月</div>
+            <div class="shibor-rate">1.528%</div>
+          </div>
+          <div class="shibor-item">
+            <div class="shibor-term">3月</div>
+            <div class="shibor-rate">1.538%</div>
+          </div>
+          <div class="shibor-item">
+            <div class="shibor-term">6月</div>
+            <div class="shibor-rate">1.552%</div>
+          </div>
+          <div class="shibor-item">
+            <div class="shibor-term">1年</div>
+            <div class="shibor-rate">1.572%</div>
+          </div>
+        </div>
+        <div style="margin-top:8px; font-size:11px; color:var(--text2);">市场流动性宽松，短端利率维持低位，隔夜Shibor 1.32%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 今日财经事件 -->
+  <div class="section">
+    <div class="section-title">今日重要财经事件（3月17日）</div>
+    <div class="card">
+      <div class="event-list">
+        <div class="event-item">
+          <div class="event-time">11:30</div>
+          <div class="event-country">🇦🇺 澳大利亚</div>
+          <div class="event-name" style="font-weight:600; color:var(--yellow);">⭐ 澳洲联储利率决议</div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">15:30</div>
+          <div class="event-country">🇮🇩 印尼</div>
+          <div class="event-name" style="font-weight:600; color:var(--yellow);">⭐ 印度尼西亚利率决议 · 存款便利利率 · 贷款年率</div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">15:30</div>
+          <div class="event-country">🇨🇭 瑞士</div>
+          <div class="event-name">瑞士生产者物价指数(PPI)月率 & 年率</div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">17:00</div>
+          <div class="event-country">🇮🇹 意大利</div>
+          <div class="event-name">意大利CPI月率 & 年率 / HICP月率 & 年率</div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">18:00</div>
+          <div class="event-country">🇩🇪 德国</div>
+          <div class="event-name" style="font-weight:600; color:var(--blue);">⭐ 德国ZEW经济景气指数 & 现况指数</div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">18:00</div>
+          <div class="event-country">🇪🇺 欧元区</div>
+          <div class="event-name">欧元区ZEW经济景气指数</div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">20:00</div>
+          <div class="event-country">🇨🇳 中国</div>
+          <div class="event-name" style="font-weight:600; color:var(--blue);">⭐ 中国实际外商直接投资年率（FDI）</div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">20:15</div>
+          <div class="event-country">🇺🇸 美国</div>
+          <div class="event-name">美国ADP就业人数周度变动</div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">20:55</div>
+          <div class="event-country">🇺🇸 美国</div>
+          <div class="event-name">美国红皮书商业零售销售年率</div>
+        </div>
+        <div class="event-item">
+          <div class="event-time">22:00</div>
+          <div class="event-country">🇺🇸 美国</div>
+          <div class="event-name">美国季调后成屋签约销售指数月率</div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div style="font-size:11px; color:var(--text2); padding:8px; background:rgba(88,166,255,0.05); border-radius:4px; margin-top:6px;">
+        📌 今日重点：<strong style="color:var(--yellow);">澳联储利率决议（11:30）</strong> · <strong style="color:var(--blue);">德国ZEW景气指数（18:00）</strong> · <strong style="color:var(--blue);">中国FDI数据（20:00）</strong>，以上均可能对盘中造成扰动，注意风险。
+      </div>
+    </div>
+  </div>
+
+  <!-- 盘前提示 -->
+  <div class="section">
+    <div class="section-title">盘前提示</div>
+    <div class="card">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div>
+          <div style="font-size:12px; font-weight:600; color:var(--green); margin-bottom:6px;">✅ 多头信号</div>
+          <ul style="list-style:none; font-size:12px; color:var(--text2); line-height:2;">
+            <li>• 北向资金大幅净流入 +302.80亿，外资明显回流</li>
+            <li>• 美股三大指数全线上涨，标普+1.01%，纳指+1.22%</li>
+            <li>• 港股恒指+1.45%，科技股恒生科技+2.69%</li>
+            <li>• 创业板+1.41%，科技成长方向持续占优</li>
+            <li>• 涨停44只 vs 跌停5只，情绪比8.8:1，市场活跃</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size:12px; font-weight:600; color:var(--red); margin-bottom:6px;">⚠️ 风险提示</div>
+          <ul style="list-style:none; font-size:12px; color:var(--text2); line-height:2;">
+            <li>• 贵金属板块大跌-3.74%，黄金整体回调明显</li>
+            <li>• 主力资金净流出-430.85亿，机构偏谨慎</li>
+            <li>• 豆粕大跌-1.95%，农产品期货整体偏弱</li>
+            <li>• 上证指数仍偏弱，连续承压4100点整数关口</li>
+            <li>• 今日FDI、ZEW等多项重要数据发布，注意波动</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  本早报由自动化程序于 2026-03-17 08:30 生成 · 数据来源：Tushare · 仅供参考，不构成投资建议
+</div>
+
+</body>
+</html>
