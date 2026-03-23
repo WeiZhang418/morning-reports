@@ -1,44 +1,64 @@
 #!/bin/bash
-# 自动推送早报到GitHub仓库
+# 自动推送早报/晚报到GitHub仓库
 
 cd /Users/zhangwei/WorkBuddy/Claw
 
 # 设置SSH密钥
 export GIT_SSH_COMMAND="ssh -i ~/.ssh/id_ed25519_morning"
 
-# 获取今天日期的早报文件
 TODAY=$(date '+%Y%m%d')
-TODAY_REPORT="market_morning_report_${TODAY}.html"
+FILES_TO_ADD=""
+COMMIT_MSG_PARTS=""
 
-echo "检查今日早报文件: $TODAY_REPORT"
-
-# 如果今天有早报文件，优先推今天的
-if [ -f "$TODAY_REPORT" ]; then
-    LATEST_REPORT="$TODAY_REPORT"
-    echo "找到今日早报: $LATEST_REPORT"
+# ---- 早报 ----
+MORNING_FILE="market_morning_report_${TODAY}.html"
+if [ -f "$MORNING_FILE" ]; then
+    FILES_TO_ADD="$FILES_TO_ADD $MORNING_FILE"
+    COMMIT_MSG_PARTS="早报 $MORNING_FILE"
+    echo "✅ 找到今日早报: $MORNING_FILE"
 else
-    # 否则找最新的早报文件
-    echo "未找到今日早报，查找最新文件..."
-    LATEST_REPORT=$(ls -t market_morning_report_*.html 2>/dev/null | head -1)
-    
-    if [ -z "$LATEST_REPORT" ]; then
-        echo "未找到任何早报文件"
-        exit 1
+    LATEST_MORNING=$(ls -t market_morning_report_*.html 2>/dev/null | head -1)
+    if [ -n "$LATEST_MORNING" ]; then
+        FILES_TO_ADD="$FILES_TO_ADD $LATEST_MORNING"
+        COMMIT_MSG_PARTS="最新早报 $LATEST_MORNING"
+        echo "ℹ️  未找到今日早报，使用最新: $LATEST_MORNING"
     fi
-    echo "使用最新早报: $LATEST_REPORT"
 fi
 
-# 添加并提交
-git add "$LATEST_REPORT"
-git commit -m "早报更新: $LATEST_REPORT" -m "自动推送于 $(date '+%Y-%m-%d %H:%M:%S')"
+# ---- 晚报 ----
+EVENING_FILE="market_evening_report_${TODAY}.html"
+if [ -f "$EVENING_FILE" ]; then
+    FILES_TO_ADD="$FILES_TO_ADD $EVENING_FILE"
+    COMMIT_MSG_PARTS="$COMMIT_MSG_PARTS 晚报 $EVENING_FILE"
+    echo "✅ 找到今日晚报: $EVENING_FILE"
+else
+    LATEST_EVENING=$(ls -t market_evening_report_*.html 2>/dev/null | head -1)
+    if [ -n "$LATEST_EVENING" ]; then
+        FILES_TO_ADD="$FILES_TO_ADD $LATEST_EVENING"
+        COMMIT_MSG_PARTS="$COMMIT_MSG_PARTS 最新晚报 $LATEST_EVENING"
+        echo "ℹ️  未找到今日晚报，使用最新: $LATEST_EVENING"
+    fi
+fi
 
-# 推送到GitHub
+if [ -z "$FILES_TO_ADD" ]; then
+    echo "❌ 未找到任何早报或晚报文件，退出"
+    exit 1
+fi
+
+# ---- 提交 ----
+git add $FILES_TO_ADD index.html
+git commit -m "报告更新: $COMMIT_MSG_PARTS" -m "自动推送于 $(date '+%Y-%m-%d %H:%M:%S')"
+
+# ---- 推送 ----
 echo "正在推送到GitHub..."
 git push origin main
 
 if [ $? -eq 0 ]; then
-    echo "✅ 推送完成: https://weizhang418.github.io/morning-reports/$LATEST_REPORT"
-    echo "📱 手机访问: 用浏览器打开上述链接即可查看"
+    echo ""
+    echo "✅ 推送完成！GitHub Pages 链接："
+    [ -f "$MORNING_FILE" ] && echo "  📰 早报: https://weizhang418.github.io/morning-reports/$MORNING_FILE"
+    [ -f "$EVENING_FILE" ] && echo "  🌙 晚报: https://weizhang418.github.io/morning-reports/$EVENING_FILE"
+    echo "📱 手机浏览器打开以上链接即可访问"
 else
     echo "❌ 推送失败"
     exit 1
