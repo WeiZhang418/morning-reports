@@ -1,877 +1,1066 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>金融市场晚报 - 2026年3月23日</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: "Microsoft YaHei", "Segoe UI", Tahoma, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            min-height: 100vh;
-            padding: 20px;
-            color: #333;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
-        .header p {
-            font-size: 1.1em;
-            opacity: 0.9;
-            margin-bottom: 5px;
-        }
-        
-        .timestamp {
-            font-size: 0.95em;
-            opacity: 0.8;
-            margin-top: 10px;
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
-            padding-top: 10px;
-        }
-        
-        .content {
-            padding: 30px;
-        }
-        
-        .section {
-            margin-bottom: 35px;
-        }
-        
-        .section-title {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #1a1a2e;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .section-title::before {
-            content: "■";
-            color: #667eea;
-            margin-right: 10px;
-            font-size: 1.2em;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 15px;
-            font-size: 0.95em;
-        }
-        
-        th {
-            background: #f5f5f5;
-            color: #333;
-            padding: 12px;
-            text-align: left;
-            font-weight: bold;
-            border-bottom: 2px solid #ddd;
-        }
-        
-        td {
-            padding: 10px 12px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        tr:hover {
-            background: #f9f9f9;
-        }
-        
-        .red { color: #e84040; font-weight: bold; }
-        .green { color: #16a34a; font-weight: bold; }
-        
-        .up { color: #e84040; }
-        .down { color: #16a34a; }
-        
-        .stock-link {
-            color: #667eea;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        
-        .stock-link:hover {
-            text-decoration: underline;
-        }
-        
-        .highlight-box {
-            background: #f0f4ff;
-            border-left: 4px solid #667eea;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 4px;
-            font-size: 0.9em;
-            line-height: 1.6;
-        }
-        
-        .news-item {
-            background: #fafafa;
-            border-left: 3px solid #667eea;
-            padding: 12px;
-            margin-bottom: 10px;
-            border-radius: 4px;
-        }
-        
-        .news-title {
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 5px;
-        }
-        
-        .news-content {
-            font-size: 0.9em;
-            color: #666;
-            line-height: 1.5;
-        }
-        
-        .rating {
-            display: inline-block;
-            background: #ffeb3b;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            margin-left: 5px;
-            font-weight: bold;
-        }
-        
-        .footer {
-            background: #f5f5f5;
-            padding: 20px;
-            text-align: center;
-            font-size: 0.85em;
-            color: #999;
-            border-top: 1px solid #ddd;
-        }
-        
-        .metric-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .metric-card {
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 3px solid #667eea;
-        }
-        
-        .metric-label {
-            font-size: 0.85em;
-            color: #666;
-            margin-bottom: 5px;
-        }
-        
-        .metric-value {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .disclaimer {
-            background: #fff3cd;
-            border: 1px solid #ffc107;
-            padding: 12px;
-            border-radius: 4px;
-            margin-top: 20px;
-            font-size: 0.9em;
-            line-height: 1.5;
-            color: #856404;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金融市场晚报 · 2026年3月23日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #0d0d1a;
+    color: #e2e8f0;
+    line-height: 1.6;
+  }
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding: 36px 24px 28px;
+    text-align: center;
+    border-bottom: 1px solid rgba(99,179,237,0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at center, rgba(99,179,237,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .header-badge {
+    display: inline-block;
+    background: rgba(99,179,237,0.15);
+    border: 1px solid rgba(99,179,237,0.3);
+    color: #90cdf4;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 13px;
+    color: #90cdf4;
+    letter-spacing: 1px;
+  }
+  .header .stars {
+    margin-top: 10px;
+    font-size: 18px;
+    opacity: 0.4;
+    letter-spacing: 4px;
+  }
+  /* Container */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px 16px;
+  }
+  /* Section */
+  .section {
+    background: #13131f;
+    border: 1px solid rgba(99,179,237,0.12);
+    border-radius: 12px;
+    margin-bottom: 18px;
+    overflow: hidden;
+  }
+  .section-header {
+    padding: 14px 20px;
+    background: linear-gradient(90deg, rgba(15,52,96,0.8) 0%, rgba(22,33,62,0.6) 100%);
+    border-bottom: 1px solid rgba(99,179,237,0.15);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-header h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #90cdf4;
+    letter-spacing: 0.5px;
+  }
+  .section-icon {
+    font-size: 16px;
+  }
+  .section-body {
+    padding: 16px 20px;
+  }
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th {
+    background: rgba(15,52,96,0.6);
+    color: #90cdf4;
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  td {
+    padding: 9px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: #cbd5e0;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(99,179,237,0.04); }
+  /* Colors */
+  .red { color: #e84040; font-weight: 600; }
+  .green { color: #16a34a; font-weight: 600; }
+  .yellow { color: #f6c90e; font-weight: 600; }
+  .blue { color: #63b3ed; font-weight: 600; }
+  .gray { color: #718096; }
+  /* Index cards */
+  .index-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  @media (max-width: 640px) {
+    .index-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .index-card {
+    background: rgba(15,52,96,0.4);
+    border: 1px solid rgba(99,179,237,0.1);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+  }
+  .index-card .name { font-size: 11px; color: #90cdf4; margin-bottom: 6px; }
+  .index-card .price { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .index-card .change { font-size: 12px; }
+  .index-card .vol { font-size: 10px; color: #718096; margin-top: 4px; }
+  /* Fund row */
+  .fund-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .fund-card {
+    background: rgba(15,52,96,0.3);
+    border: 1px solid rgba(99,179,237,0.1);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+  }
+  .fund-card .label { font-size: 11px; color: #a0aec0; margin-bottom: 4px; }
+  .fund-card .value { font-size: 16px; font-weight: 700; }
+  /* News items */
+  .news-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    align-items: flex-start;
+  }
+  .news-item:last-child { border-bottom: none; }
+  .news-star {
+    min-width: 40px;
+    font-size: 12px;
+    color: #f6c90e;
+    padding-top: 2px;
+  }
+  .news-content { flex: 1; }
+  .news-title {
+    font-size: 14px;
+    color: #e2e8f0;
+    font-weight: 500;
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+  .news-analysis {
+    font-size: 12px;
+    color: #718096;
+    line-height: 1.5;
+  }
+  .news-tag {
+    display: inline-block;
+    background: rgba(99,179,237,0.15);
+    color: #63b3ed;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    margin-right: 4px;
+  }
+  /* Ladder */
+  .ladder {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .ladder-item {
+    background: rgba(232,64,64,0.15);
+    border: 1px solid rgba(232,64,64,0.3);
+    border-radius: 6px;
+    padding: 6px 12px;
+    text-align: center;
+    font-size: 13px;
+  }
+  .ladder-item .lname { color: #e84040; font-weight: 600; font-size: 13px; }
+  .ladder-item .ldays { color: #f6c90e; font-size: 11px; margin-top: 2px; }
+  /* Tags */
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-right: 4px;
+  }
+  .tag-red { background: rgba(232,64,64,0.2); color: #e84040; }
+  .tag-green { background: rgba(22,163,74,0.2); color: #16a34a; }
+  .tag-blue { background: rgba(99,179,237,0.2); color: #63b3ed; }
+  .tag-yellow { background: rgba(246,201,14,0.2); color: #f6c90e; }
+  /* Crypto */
+  .crypto-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  @media (max-width: 640px) {
+    .crypto-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .crypto-card {
+    background: rgba(15,52,96,0.3);
+    border: 1px solid rgba(99,179,237,0.1);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+  }
+  .crypto-card .sym { font-size: 12px; color: #90cdf4; font-weight: 600; margin-bottom: 4px; }
+  .crypto-card .cprice { font-size: 15px; font-weight: 700; color: #fff; }
+  .crypto-card .c24h { font-size: 11px; margin-top: 3px; }
+  .crypto-card .c7d { font-size: 10px; color: #718096; margin-top: 1px; }
+  /* Summary bar */
+  .summary-bar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .summary-pill {
+    background: rgba(15,52,96,0.5);
+    border: 1px solid rgba(99,179,237,0.15);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  /* Outlook */
+  .outlook-item {
+    display: flex;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    align-items: flex-start;
+  }
+  .outlook-item:last-child { border-bottom: none; }
+  .outlook-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #63b3ed;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 24px;
+    color: #4a5568;
+    font-size: 12px;
+    border-top: 1px solid rgba(99,179,237,0.08);
+    margin-top: 8px;
+  }
+  /* Divider */
+  .divider { height: 1px; background: rgba(255,255,255,0.06); margin: 12px 0; }
+  /* Market comment */
+  .market-comment {
+    background: rgba(15,52,96,0.3);
+    border-left: 3px solid #63b3ed;
+    border-radius: 0 6px 6px 0;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #a0aec0;
+    line-height: 1.7;
+    margin-top: 12px;
+  }
+  /* highlight */
+  .hl { color: #63b3ed; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { text-decoration: underline; color: #63b3ed; }
+  .stock-link { color: #e84040; }
+  .stock-link:hover { text-decoration: underline; }
+  .stock-link-green { color: #16a34a; }
+  .stock-link-green:hover { text-decoration: underline; }
+  /* Two col */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 600px) {
+    .two-col { grid-template-columns: 1fr; }
+  }
+  .sub-section {
+    background: rgba(15,52,96,0.2);
+    border: 1px solid rgba(99,179,237,0.08);
+    border-radius: 8px;
+    padding: 12px;
+  }
+  .sub-section h3 {
+    font-size: 12px;
+    color: #90cdf4;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+  /* Futures highlight */
+  .fut-up { color: #e84040; }
+  .fut-down { color: #16a34a; }
+  .fut-flat { color: #a0aec0; }
+  /* Alert banner */
+  .alert-banner {
+    background: linear-gradient(90deg, rgba(232,64,64,0.1) 0%, rgba(15,52,96,0.4) 100%);
+    border: 1px solid rgba(232,64,64,0.25);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 13px;
+    color: #e2e8f0;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  /* stat chips */
+  .stat-chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .stat-chip {
+    background: rgba(15,52,96,0.5);
+    border: 1px solid rgba(99,179,237,0.15);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: #a0aec0;
+  }
+  .stat-chip span { font-weight: 600; }
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- 头部 -->
-        <div class="header">
-            <h1>📊 金融市场晚报</h1>
-            <p>每日市场复盘 · 明日机会展望</p>
-            <div class="timestamp">
-                <p>数据截至 2026年3月23日 16:00（今日收盘）</p>
-                <p>报告生成时间：2026年3月23日 16:30</p>
-            </div>
-        </div>
-        
-        <div class="content">
-            <!-- 1. 今日A股市场全面复盘 -->
-            <div class="section">
-                <div class="section-title">1️⃣ 今日A股市场全面复盘</div>
-                <p>2026年3月23日，周一，A股交易日。市场全天呈现分化格局，涨停股数量远超跌停股，显示市场做多热情高涨。新能源和能源板块领涨，保险和医药板块承压。</p>
-                
-                <h4 style="margin-top: 15px; margin-bottom: 10px; color: #333;">📈 五大指数收盘行情</h4>
-                <table>
-                    <tr>
-                        <th>指数名称</th>
-                        <th>收盘价</th>
-                        <th>涨跌幅</th>
-                        <th>备注</th>
-                    </tr>
-                    <tr>
-                        <td><strong>上证指数</strong></td>
-                        <td>3,813.28</td>
-                        <td><span class="green">▼ -3.63%</span></td>
-                        <td>沪市主指标</td>
-                    </tr>
-                    <tr>
-                        <td><strong>深证成指</strong></td>
-                        <td>13,345.51</td>
-                        <td><span class="green">▼ -3.76%</span></td>
-                        <td>深市主指标</td>
-                    </tr>
-                    <tr>
-                        <td><strong>创业板指</strong></td>
-                        <td>3,235.22</td>
-                        <td><span class="green">▼ -3.49%</span></td>
-                        <td>小企业指数</td>
-                    </tr>
-                    <tr>
-                        <td><strong>科创50</strong></td>
-                        <td>1,261.44</td>
-                        <td><span class="green">▼ -4.31%</span></td>
-                        <td>科技创新指数</td>
-                    </tr>
-                    <tr>
-                        <td><strong>沪深300</strong></td>
-                        <td>4,417.99</td>
-                        <td><span class="green">▼ -3.26%</span></td>
-                        <td>蓝筹股指数</td>
-                    </tr>
-                </table>
-                
-                <div class="highlight-box">
-                    <strong>⚡ 市场特征：</strong><br>
-                    • 涨停股28只（占比远高于历史平均）<br>
-                    • 跌停股75只（主要为昨日涨停的炸板股）<br>
-                    • 连板股11只（3连板及以上）<br>
-                    • 主要涨停板块：新能源、能源、装备制造、传媒
-                </div>
-            </div>
-            
-            <!-- 2. 今日资金面总结 -->
-            <div class="section">
-                <div class="section-title">2️⃣ 今日资金面总结</div>
-                
-                <h4 style="margin-top: 15px; margin-bottom: 10px; color: #333;">🌐 沪深港通资金</h4>
-                <div class="metric-row">
-                    <div class="metric-card">
-                        <div class="metric-label">北向合计</div>
-                        <div class="metric-value"><span class="red">+352.34亿</span></div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-label">沪股通</div>
-                        <div class="metric-value"><span class="red">+191.58亿</span></div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-label">深股通</div>
-                        <div class="metric-value"><span class="red">+160.76亿</span></div>
-                    </div>
-                </div>
-                
-                <div class="highlight-box">
-                    ✅ <strong>北向资金持续大幅净买入：</strong> 外资今日净流入352.34亿元，创近期新高，表明国际机构对A股相对看好。
-                </div>
-                
-                <h4 style="margin-top: 15px; margin-bottom: 10px; color: #333;">💰 大盘资金流向（DC口径）</h4>
-                <table>
-                    <tr>
-                        <th>资金类型</th>
-                        <th>净流入（亿元）</th>
-                        <th>占比</th>
-                    </tr>
-                    <tr>
-                        <td>主力资金</td>
-                        <td class="red">数据统计中...</td>
-                        <td>—</td>
-                    </tr>
-                    <tr>
-                        <td>超大单</td>
-                        <td class="red">数据统计中...</td>
-                        <td>—</td>
-                    </tr>
-                    <tr>
-                        <td>大单</td>
-                        <td class="red">数据统计中...</td>
-                        <td>—</td>
-                    </tr>
-                    <tr>
-                        <td>散户</td>
-                        <td class="red">数据统计中...</td>
-                        <td>—</td>
-                    </tr>
-                </table>
-            </div>
-            
-            <!-- 3. 涨跌停板全榜单 -->
-            <div class="section">
-                <div class="section-title">3️⃣ 涨跌停板全榜单</div>
-                
-                <h4 style="margin-top: 15px; margin-bottom: 10px; color: #333;">🔴 涨停股（28只）</h4>
-                <table>
-                    <tr>
-                        <th>股票代码</th>
-                        <th>股票名称</th>
-                        <th>收盘价</th>
-                        <th>涨跌幅</th>
-                        <th>成交量</th>
-                    </tr>
-                    <tr>
-                        <td>000703.SZ</td>
-                        <td><a href="https://quote.eastmoney.com/sz000703.html" target="_blank" class="stock-link">恒逸石化</a></td>
-                        <td>11.84</td>
-                        <td><span class="red">+10.04%</span></td>
-                        <td>71.57亿</td>
-                    </tr>
-                    <tr>
-                        <td>001258.SZ</td>
-                        <td><a href="https://quote.eastmoney.com/sz001258.html" target="_blank" class="stock-link">立新能源</a></td>
-                        <td>10.62</td>
-                        <td><span class="red">+10.05%</span></td>
-                        <td>90.32亿</td>
-                    </tr>
-                    <tr>
-                        <td>002150.SZ</td>
-                        <td><a href="https://quote.eastmoney.com/sz002150.html" target="_blank" class="stock-link">正泰电源</a></td>
-                        <td>38.37</td>
-                        <td><span class="red">+10.01% (2连涨)</span></td>
-                        <td>224.99亿</td>
-                    </tr>
-                    <tr>
-                        <td>002309.SZ</td>
-                        <td><a href="https://quote.eastmoney.com/sz002309.html" target="_blank" class="stock-link">中利集团</a></td>
-                        <td>4.19</td>
-                        <td><span class="red">+9.97% (2连涨)</span></td>
-                        <td>30.71亿</td>
-                    </tr>
-                    <tr>
-                        <td>002310.SZ</td>
-                        <td><a href="https://quote.eastmoney.com/sz002310.html" target="_blank" class="stock-link">东方新能</a></td>
-                        <td>3.83</td>
-                        <td><span class="red">+10.06% (3连涨)</span></td>
-                        <td>319.49亿</td>
-                    </tr>
-                    <tr>
-                        <td>600396.SH</td>
-                        <td><a href="https://quote.eastmoney.com/sh600396.html" target="_blank" class="stock-link">华电辽能</a></td>
-                        <td>6.89</td>
-                        <td><span class="red">+10.06% (6连涨)</span></td>
-                        <td>114.82亿</td>
-                    </tr>
-                    <tr>
-                        <td>603687.SH</td>
-                        <td><a href="https://quote.eastmoney.com/sh603687.html" target="_blank" class="stock-link">大胜达</a></td>
-                        <td>14.73</td>
-                        <td><span class="red">+10.01% (4连涨)</span></td>
-                        <td>240.48亿</td>
-                    </tr>
-                </table>
-                
-                <h4 style="margin-top: 15px; margin-bottom: 10px; color: #333;">🟢 跌停股（75只） - 部分头部</h4>
-                <table>
-                    <tr>
-                        <th>股票代码</th>
-                        <th>股票名称</th>
-                        <th>收盘价</th>
-                        <th>跌幅</th>
-                    </tr>
-                    <tr>
-                        <td>000509.SZ</td>
-                        <td><a href="https://quote.eastmoney.com/sz000509.html" target="_blank" class="stock-link">华塑控股</a></td>
-                        <td>4.09</td>
-                        <td><span class="green">-9.91%</span></td>
-                    </tr>
-                    <tr>
-                        <td>000603.SZ</td>
-                        <td><a href="https://quote.eastmoney.com/sz000603.html" target="_blank" class="stock-link">盛达资源</a></td>
-                        <td>35.09</td>
-                        <td><span class="green">-10.00%</span></td>
-                    </tr>
-                    <tr>
-                        <td>600703.SH</td>
-                        <td><a href="https://quote.eastmoney.com/sh600703.html" target="_blank" class="stock-link">三安光电</a></td>
-                        <td>14.89</td>
-                        <td><span class="green">-9.98%</span></td>
-                    </tr>
-                </table>
-                
-                <div class="highlight-box">
-                    📊 <strong>连板股统计（3连板及以上）：</strong><br>
-                    • 华电辽能（600396）：6连涨<br>
-                    • 大胜达（603687）：4连涨<br>
-                    • 东方新能（002310）：3连涨<br>
-                    • 正泰电源（002150）、中利集团（002309）：2连涨<br>
-                    • 涨停-跌停比例：28:75，炸板率较高，反映市场分化明显
-                </div>
-            </div>
-            
-            <!-- 4. 行业板块全复盘 -->
-            <div class="section">
-                <div class="section-title">4️⃣ 行业板块全复盘</div>
-                
-                <h4 style="margin-top: 15px; margin-bottom: 10px; color: #333;">📈 涨幅前3行业</h4>
-                <table>
-                    <tr>
-                        <th>行业名称</th>
-                        <th>涨幅</th>
-                        <th>龙头股</th>
-                        <th>表现</th>
-                    </tr>
-                    <tr>
-                        <td><strong>新能源</strong></td>
-                        <td><span class="red">+5.62%</span></td>
-                        <td><a href="https://quote.eastmoney.com/sz000703.html" target="_blank" class="stock-link">恒逸石化</a></td>
-                        <td>涨停</td>
-                    </tr>
-                    <tr>
-                        <td><strong>电力能源</strong></td>
-                        <td><span class="red">+5.78%</span></td>
-                        <td><a href="https://quote.eastmoney.com/sh600396.html" target="_blank" class="stock-link">华电辽能</a></td>
-                        <td>6连涨</td>
-                    </tr>
-                    <tr>
-                        <td><strong>装备制造</strong></td>
-                        <td><span class="red">+5.17%</span></td>
-                        <td><a href="https://quote.eastmoney.com/sh603687.html" target="_blank" class="stock-link">大胜达</a></td>
-                        <td>4连涨</td>
-                    </tr>
-                </table>
-                
-                <h4 style="margin-top: 15px; margin-bottom: 10px; color: #333;">📉 跌幅前3行业</h4>
-                <table>
-                    <tr>
-                        <th>行业名称</th>
-                        <th>跌幅</th>
-                        <th>龙头股</th>
-                        <th>表现</th>
-                    </tr>
-                    <tr>
-                        <td><strong>医药生物</strong></td>
-                        <td><span class="green">-6.56%</span></td>
-                        <td>多只跌停</td>
-                        <td>风险释放</td>
-                    </tr>
-                    <tr>
-                        <td><strong>保险</strong></td>
-                        <td><span class="green">-4.90%</span></td>
-                        <td>保险类个股</td>
-                        <td>估值调整</td>
-                    </tr>
-                    <tr>
-                        <td><strong>房地产</strong></td>
-                        <td><span class="green">-4.60%</span></td>
-                        <td>地产股</td>
-                        <td>持续调整</td>
-                    </tr>
-                </table>
-                
-                <div class="highlight-box">
-                    🎯 <strong>主题热点分析：</strong><br>
-                    • 新能源板块强势：成品油涨价刺激新能源预期升温<br>
-                    • 能源股大涨：央行流动性支撑，大宗商品价格回升<br>
-                    • 医药股回调：业绩分化，估值高企个股遭净卖出
-                </div>
-            </div>
-            
-            <!-- 5. 海外市场收盘情况 -->
-            <div class="section">
-                <div class="section-title">5️⃣ 海外市场收盘情况</div>
-                
-                <h4 style="margin-top: 15px; margin-bottom: 10px; color: #333;">🌏 亚太市场</h4>
-                <table>
-                    <tr>
-                        <th>指数名称</th>
-                        <th>收盘价</th>
-                        <th>涨跌</th>
-                        <th>涨跌幅</th>
-                    </tr>
-                    <tr>
-                        <td>恒指 (HSI)</td>
-                        <td>24,382.47</td>
-                        <td><span class="green">-894.85</span></td>
-                        <td><span class="green">-3.54%</span></td>
-                    </tr>
-                    <tr>
-                        <td>恒生科技 (HKTECH)</td>
-                        <td>4,712.48</td>
-                        <td><span class="green">-159.90</span></td>
-                        <td><span class="green">-3.28%</span></td>
-                    </tr>
-                    <tr>
-                        <td>日经225 (N225)</td>
-                        <td>51,515.49</td>
-                        <td><span class="green">-1,857.04</span></td>
-                        <td><span class="green">-3.48%</span></td>
-                    </tr>
-                    <tr>
-                        <td>韩国综合 (KS11)</td>
-                        <td>5,405.75</td>
-                        <td><span class="green">-375.45</span></td>
-                        <td><span class="green">-6.49%</span></td>
-                    </tr>
-                    <tr>
-                        <td>台湾加权 (TWII)</td>
-                        <td>32,722.50</td>
-                        <td><span class="green">-821.38</span></td>
-                        <td><span class="green">-2.45%</span></td>
-                    </tr>
-                </table>
-                
-                <h4 style="margin-top: 15px; margin-bottom: 10px; color: #333;">🌍 欧洲市场 & 美国市场</h4>
-                <div class="highlight-box">
-                    ⚠️ <strong>国际市场回调：</strong><br>
-                    亚太和欧美市场普遍承压，主要受到中东局势缓和导致避险资金流出、美联储加息预期升温影响。港股下跌3.54%，台股下跌2.45%，韩股跌幅最大达-6.49%。
-                </div>
-            </div>
-            
-            <!-- 6. 大宗商品收盘 -->
-            <div class="section">
-                <div class="section-title">6️⃣ 大宗商品收盘</div>
-                
-                <h4 style="margin-top: 15px; margin-bottom: 10px; color: #333;">💰 贵金属 & 原油</h4>
-                <table>
-                    <tr>
-                        <th>商品</th>
-                        <th>收盘价</th>
-                        <th>涨跌</th>
-                        <th>涨跌幅</th>
-                        <th>备注</th>
-                    </tr>
-                    <tr>
-                        <td>黄金现货(Au99.99)</td>
-                        <td>924.65元/克</td>
-                        <td><span class="green">-116.94</span></td>
-                        <td><span class="green">-11.21%</span></td>
-                        <td>大幅回落</td>
-                    </tr>
-                    <tr>
-                        <td>白银现货(Ag99.99)</td>
-                        <td>16.484元/克</td>
-                        <td><span class="green">-1.664</span></td>
-                        <td><span class="green">-9.18%</span></td>
-                        <td>随黄金回调</td>
-                    </tr>
-                    <tr>
-                        <td>铂金现货(Pt99.95)</td>
-                        <td>459.83元/克</td>
-                        <td><span class="green">-49.05</span></td>
-                        <td><span class="green">-9.64%</span></td>
-                        <td>避险资金流出</td>
-                    </tr>
-                    <tr>
-                        <td>原油(SC主力)</td>
-                        <td>834.6元/桶</td>
-                        <td><span class="red">+61.0</span></td>
-                        <td><span class="red">+7.89%</span></td>
-                        <td>成品油涨价预期</td>
-                    </tr>
-                </table>
-                
-                <h4 style="margin-top: 15px; margin-bottom: 10px; color: #333;">🌾 期货主力合约</h4>
-                <table>
-                    <tr>
-                        <th>合约名称</th>
-                        <th>收盘价</th>
-                        <th>涨跌幅</th>
-                        <th>分类</th>
-                    </tr>
-                    <tr>
-                        <td>螺纹钢(RB2605)</td>
-                        <td>—</td>
-                        <td><span class="red">待补充</span></td>
-                        <td>平稳品种</td>
-                    </tr>
-                    <tr>
-                        <td>铁矿石(I2605)</td>
-                        <td>—</td>
-                        <td><span class="red">待补充</span></td>
-                        <td>平稳品种</td>
-                    </tr>
-                    <tr>
-                        <td>豆粕(M2605)</td>
-                        <td>—</td>
-                        <td><span class="red">待补充</span></td>
-                        <td>平稳品种</td>
-                    </tr>
-                    <tr>
-                        <td>玉米(C2605)</td>
-                        <td>2,415.0</td>
-                        <td><span class="red">+1.17%</span></td>
-                        <td>小幅上涨</td>
-                    </tr>
-                    <tr>
-                        <td>聚酯(TA2605)</td>
-                        <td>7,134.0</td>
-                        <td><span class="red">+7.28%</span></td>
-                        <td>大幅上涨 (≥3%)</td>
-                    </tr>
-                </table>
-                
-                <div class="highlight-box">
-                    📊 <strong>商品市场特点：</strong><br>
-                    • 黄金大幅回落：伊朗停战条件提出，避险情绪消散<br>
-                    • 原油强势上涨：国内成品油价格上调预期升温<br>
-                    • 化工品涨价：聚酯等下游化工品跟涨原油
-                </div>
-            </div>
-            
-            <!-- 7. 数字货币市场实时行情 -->
-            <div class="section">
-                <div class="section-title">7️⃣ 数字货币市场实时行情</div>
-                
-                <h4 style="margin-top: 15px; margin-bottom: 10px; color: #333;">🪙 主流币种行情（北京时间 2026-03-23 11:19 UTC+8）</h4>
-                <table>
-                    <tr>
-                        <th>币种</th>
-                        <th>实时价格 (USD)</th>
-                        <th>24h涨跌幅</th>
-                        <th>7d涨跌幅</th>
-                        <th>市值排名</th>
-                    </tr>
-                    <tr>
-                        <td><strong>Bitcoin (BTC)</strong></td>
-                        <td>$70,871</td>
-                        <td><span class="red">+3.27%</span></td>
-                        <td><span class="green">-3.88%</span></td>
-                        <td>#1 (1.419万亿)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Ethereum (ETH)</strong></td>
-                        <td>$2,178.10</td>
-                        <td><span class="red">+4.65%</span></td>
-                        <td><span class="green">-4.35%</span></td>
-                        <td>#2 (2632.8亿)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>BNB</strong></td>
-                        <td>$648.58</td>
-                        <td><span class="red">+3.08%</span></td>
-                        <td><span class="green">-4.43%</span></td>
-                        <td>#4 (880.6亿)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Solana (SOL)</strong></td>
-                        <td>$90.98</td>
-                        <td><span class="red">+4.16%</span></td>
-                        <td><span class="green">-3.04%</span></td>
-                        <td>#7 (501.7亿)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>XRP</strong></td>
-                        <td>$1.43</td>
-                        <td><span class="red">+3.11%</span></td>
-                        <td><span class="green">-2.86%</span></td>
-                        <td>#5 (878.2亿)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Dogecoin (DOGE)</strong></td>
-                        <td>$0.094562</td>
-                        <td><span class="red">+3.82%</span></td>
-                        <td><span class="green">-5.85%</span></td>
-                        <td>#10 (144.9亿)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Sui (SUI)</strong></td>
-                        <td>$0.953129</td>
-                        <td><span class="red">+3.43%</span></td>
-                        <td><span class="green">-9.97%</span></td>
-                        <td>#30 (37.2亿)</td>
-                    </tr>
-                </table>
-                
-                <div class="metric-row">
-                    <div class="metric-card">
-                        <div class="metric-label">全球加密总市值</div>
-                        <div class="metric-value">$2.50万亿</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-label">24小时成交量</div>
-                        <div class="metric-value">$832.25亿</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-label">BTC市占率</div>
-                        <div class="metric-value">56.53%</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-label">ETH市占率</div>
-                        <div class="metric-value">10.37%</div>
-                    </div>
-                </div>
-                
-                <div class="highlight-box">
-                    📈 <strong>数字货币市场分析：</strong><br>
-                    • BTC突破7万美元：技术面强势，避险资金回流<br>
-                    • ETH涨幅领先：以太坊生态活跃，Dapp用户增长<br>
-                    • 7天表现普遍回调：短期获利回吐，但24h反弹强势<br>
-                    • 数据更新时间：2026-03-23T11:19:21Z 至 2026-03-23T11:19:36Z
-                </div>
-            </div>
-            
-            <!-- 8. 利率数据 -->
-            <div class="section">
-                <div class="section-title">8️⃣ 短期融资利率 & Shibor</div>
-                
-                <table>
-                    <tr>
-                        <th>指标</th>
-                        <th>今日 (3月23日)</th>
-                        <th>前日 (3月20日)</th>
-                        <th>变化(bp)</th>
-                    </tr>
-                    <tr>
-                        <td>Shibor隔夜(ON)</td>
-                        <td>1.317%</td>
-                        <td>1.319%</td>
-                        <td><span class="green">-0.2bp</span></td>
-                    </tr>
-                    <tr>
-                        <td>Shibor7天(1W)</td>
-                        <td>1.422%</td>
-                        <td>1.417%</td>
-                        <td><span class="red">+0.5bp</span></td>
-                    </tr>
-                    <tr>
-                        <td>Shibor14天(2W)</td>
-                        <td>1.524%</td>
-                        <td>1.523%</td>
-                        <td><span class="red">+0.1bp</span></td>
-                    </tr>
-                    <tr>
-                        <td>Shibor1月(1M)</td>
-                        <td>1.5095%</td>
-                        <td>1.514%</td>
-                        <td><span class="green">-3.1bp</span></td>
-                    </tr>
-                    <tr>
-                        <td>Shibor3月(3M)</td>
-                        <td>1.5182%</td>
-                        <td>1.522%</td>
-                        <td><span class="green">-3.8bp</span></td>
-                    </tr>
-                </table>
-                
-                <div class="highlight-box">
-                    💳 <strong>流动性分析：</strong><br>
-                    • 央行净投放800亿：逆回购80亿 + 央票600亿<br>
-                    • 隔夜拆借利率略降：短期流动性充足<br>
-                    • 长期Shibor下行：市场对稳增长政策有预期
-                </div>
-            </div>
-            
-            <!-- 9. 今日重要财经新闻汇总 -->
-            <div class="section">
-                <div class="section-title">9️⃣ 今日重要财经新闻汇总</div>
-                
-                <div class="news-item">
-                    <div class="news-title">
-                        🛢 国家发改委：成品油价格上调 <span class="rating">★★★★★</span>
-                    </div>
-                    <div class="news-content">
-                        今晚24时调价窗口开启，国内成品油价格迎来年内最大幅度上调，汽油涨价1160元/吨，柴油涨价1120元/吨。推动新能源和能源板块全面走强。
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="news-title">
-                        🏦 央行：流动性投放双管齐下 <span class="rating">★★★★☆</span>
-                    </div>
-                    <div class="news-content">
-                        央行今日净投放800亿元（逆回购80亿 + 央票600亿），进一步释放稳增长信号。资金面继续保持宽松，支撑股债等风险资产上涨。
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="news-title">
-                        💱 外汇市场：人民币中间价升至6.9041 <span class="rating">★★★☆☆</span>
-                    </div>
-                    <div class="news-content">
-                        人民币中间价继续升值，反映出美联储加息预期升温、国内经济面改善的混合信号。离岸人民币升破6.90整数关口。
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="news-title">
-                        ⚔️ 伊朗停战条件：局势缓和 <span class="rating">★★★☆☆</span>
-                    </div>
-                    <div class="news-content">
-                        伊朗提出停战6项条件，有望推动中东地缘冲突缓解。避险资金回流，贵金属大幅回落，原油涨幅略微回调。
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="news-title">
-                        🇰🇷 韩国股市跌幅最大 <span class="rating">★★☆☆☆</span>
-                    </div>
-                    <div class="news-content">
-                        亚太市场普遍下跌，韩综指跌幅最大达-6.49%，主要受国际地缘冲突缓和、避险资金流出影响。
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 10. 明日市场展望 -->
-            <div class="section">
-                <div class="section-title">🔟 明日市场展望（3月24日，周二）</div>
-                
-                <h4 style="margin-top: 15px; margin-bottom: 10px; color: #333;">📅 明日需关注的重要数据与事件</h4>
-                <div class="highlight-box">
-                    <strong>上半周安排：</strong><br>
-                    ✓ 央行MLF操作确认<br>
-                    ✓ 贷款市场报价利率(LPR)公布<br>
-                    ✓ 港澳台地区经济数据<br>
-                    ✓ 部分上市公司业绩发布<br>
-                    ✓ 伊朗局势进展持续跟踪
-                </div>
-                
-                <h4 style="margin-top: 15px; margin-bottom: 10px; color: #333;">📊 技术面展望</h4>
-                <div class="highlight-box">
-                    <strong>阻力位 & 支撑位（基于创业板）：</strong><br>
-                    📈 上方压力：3,380点（前期高点）<br>
-                    📉 下方支撑：3,300点（今日收盘附近）<br>
-                    <br>
-                    <strong>预期走势：</strong> 震荡向上。新能源和能源板块有望继续领涨，但需警惕医药、房地产等超跌品种的反弹风险。北向资金持续净买入支撑，但国际市场回调可能拖累人气。
-                </div>
-            </div>
-            
-            <!-- 投资免责声明 -->
-            <div class="disclaimer">
-                ⚠️ <strong>投资风险提示及免责声明：</strong><br>
-                本报告仅供参考，不构成投资建议。股票、基金、期货等金融产品存在风险，投资者应自行评估风险承受能力。历史表现不代表未来收益，市场波动可能导致本金损失。请投资者在投资前咨询专业人士，做好风险管理工作。所有数据为生成时刻的实时数据，价格波动可能较快。
-            </div>
-        </div>
-        
-        <div class="footer">
-            <p>晚报生成时间：2026年3月23日 16:30 | 数据截至：16:00（交易结束）</p>
-            <p>数据来源：Tushare API / CoinGecko / 财经新闻实时爬取</p>
-            <p>© 2026 金融市场晚报 · 仅供参考</p>
-        </div>
+
+<!-- Header -->
+<div class="header">
+  <div class="header-badge">EVENING REPORT · 金融市场晚报</div>
+  <h1>📉 今日市场复盘</h1>
+  <div class="subtitle">2026年03月23日（周一）· 数据截至今日收盘</div>
+  <div class="stars">★ ★ ★ ★ ★</div>
+</div>
+
+<div class="container">
+
+<!-- 今日A股市场全面复盘 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">📊</span>
+    <h2>今日A股市场全面复盘</h2>
+  </div>
+  <div class="section-body">
+    <div class="alert-banner">
+      ⚠️ <strong>全线重挫警报</strong>：今日A股惨烈下跌，沪深两市超5100只个股飘绿，五大指数平均跌幅达 <span class="red">3.7%</span>，盘中上证指数一度失守3800点整数关口
     </div>
+    <div class="index-grid">
+      <div class="index-card">
+        <div class="name">上证指数</div>
+        <div class="price">3,813.28</div>
+        <div class="change green">▼ -3.63%</div>
+        <div class="vol">成交量：8047亿股</div>
+      </div>
+      <div class="index-card">
+        <div class="name">深证成指</div>
+        <div class="price">13,345.51</div>
+        <div class="change green">▼ -3.76%</div>
+        <div class="vol">成交量：8516亿股</div>
+      </div>
+      <div class="index-card">
+        <div class="name">创业板指</div>
+        <div class="price">3,235.22</div>
+        <div class="change green">▼ -3.49%</div>
+        <div class="vol">成交量：2397亿股</div>
+      </div>
+      <div class="index-card">
+        <div class="name">科创50</div>
+        <div class="price" style="font-size:16px">1,261.44</div>
+        <div class="change green">▼ -4.31%</div>
+        <div class="vol">最惨 · 领跌</div>
+      </div>
+      <div class="index-card">
+        <div class="name">沪深300</div>
+        <div class="price">4,417.99</div>
+        <div class="change green">▼ -3.26%</div>
+        <div class="vol">成交量：3281亿股</div>
+      </div>
+    </div>
+    <div class="market-comment">
+      <strong>走势简评：</strong>
+      今日A股<span class="hl">低开低走</span>，开盘即遭重挫，早盘跌幅扩大，午后沪指一度跌破3800点；尾盘略有企稳，以3813点收盘，盘中流动性压力明显。全天两市合计成交额 <strong style="color:#f6c90e">约2.45万亿元</strong>，与上日相比显著放量，超5100只个股下跌，仅煤炭等少数板块逆势飘红。触发因素包括：国际贵金属暴跌引发风险偏好下降、三安光电实控人被留置引爆情绪、中小险企偿付能力传闻造成恐慌性抛售，以及地缘风险推升通胀预期导致美联储降息预期降温。
+    </div>
+  </div>
+</div>
+
+<!-- 今日资金面总结 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">💰</span>
+    <h2>今日资金面总结</h2>
+  </div>
+  <div class="section-body">
+    <div class="stat-chips">
+      <div class="stat-chip">两市成交额 <span class="yellow">约2.45万亿</span></div>
+      <div class="stat-chip">北向净买入 <span class="red">+352.34亿</span></div>
+      <div class="stat-chip">沪股通 <span class="red">+191.58亿</span></div>
+      <div class="stat-chip">深股通 <span class="red">+160.76亿</span></div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>资金类型</th>
+          <th>净流向</th>
+          <th>说明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>北向资金（合计）</strong></td>
+          <td><span class="red">+352.34亿</span></td>
+          <td>逆势强劲买入，近期历史高位</td>
+        </tr>
+        <tr>
+          <td>沪股通</td>
+          <td><span class="red">+191.58亿</span></td>
+          <td>沪市外资净流入</td>
+        </tr>
+        <tr>
+          <td>深股通</td>
+          <td><span class="red">+160.76亿</span></td>
+          <td>深市外资净流入</td>
+        </tr>
+        <tr>
+          <td>主力资金</td>
+          <td><span class="green">大幅净流出</span></td>
+          <td>市场恐慌抛售，主力撤离</td>
+        </tr>
+        <tr>
+          <td>散户资金</td>
+          <td><span class="green">净流出</span></td>
+          <td>跟随下跌减仓</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="market-comment" style="margin-top:10px">
+      <strong>🔎 关键信号：</strong>北向资金在今日A股大跌中大手笔逆势买入352亿，为近期最强单日净流入，反映外资对A股中长期价值持续看好，国内机构与散户恐慌性抛售与外资逆向操作形成鲜明对比。
+    </div>
+  </div>
+</div>
+
+<!-- 今日涨跌停全榜单 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🔔</span>
+    <h2>今日涨跌停全榜单</h2>
+  </div>
+  <div class="section-body">
+    <div class="stat-chips">
+      <div class="stat-chip">涨停 <span class="red">28只</span></div>
+      <div class="stat-chip">跌停 <span class="green">53+只</span></div>
+      <div class="stat-chip">涨停包含 <span class="red">20cm</span>：华民股份、雪浪环境、杰美特</div>
+    </div>
+
+    <div class="divider"></div>
+    <h3 style="font-size:13px;color:#90cdf4;margin-bottom:8px">🪜 连板天梯（3连板及以上）</h3>
+    <div class="ladder">
+      <div class="ladder-item">
+        <div class="lname"><a href="https://quote.eastmoney.com/sh600396.html" target="_blank" class="stock-link">华电辽能</a></div>
+        <div class="ldays">🔥 6连板</div>
+      </div>
+      <div class="ladder-item">
+        <div class="lname"><a href="https://quote.eastmoney.com/sh603687.html" target="_blank" class="stock-link">大胜达</a></div>
+        <div class="ldays">4连板</div>
+      </div>
+      <div class="ladder-item">
+        <div class="lname"><a href="https://quote.eastmoney.com/sz002310.html" target="_blank" class="stock-link">东方新能</a></div>
+        <div class="ldays">3连板</div>
+      </div>
+    </div>
+    <div style="font-size:12px;color:#718096;margin-top:6px;margin-bottom:14px">注：2连板包括正泰电源、中利集团等，*ST景峰退市重整后复牌</div>
+
+    <div class="divider"></div>
+    <h3 style="font-size:13px;color:#90cdf4;margin-bottom:8px">🔝 涨停前10（按成交量排序）</h3>
+    <table>
+      <thead>
+        <tr><th>排名</th><th>股票</th><th>代码</th><th>收盘价</th><th>连板</th><th>成交额</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><a href="https://quote.eastmoney.com/sz002565.html" target="_blank" class="stock-link">顺灏股份</a></td><td>002565</td><td>16.98</td><td>1板</td><td>47.13亿</td></tr>
+        <tr><td>2</td><td><a href="https://quote.eastmoney.com/sz002310.html" target="_blank" class="stock-link">东方新能</a></td><td>002310</td><td>3.83</td><td>3板</td><td>31.95亿</td></tr>
+        <tr><td>3</td><td><a href="https://quote.eastmoney.com/sh600143.html" target="_blank" class="stock-link">金发科技</a></td><td>600143</td><td>17.57</td><td>1板</td><td>32.44亿</td></tr>
+        <tr><td>4</td><td><a href="https://quote.eastmoney.com/sz300345.html" target="_blank" class="stock-link">华民股份</a></td><td>300345</td><td>8.99</td><td>1板（20cm）</td><td>16.05亿</td></tr>
+        <tr><td>5</td><td><a href="https://quote.eastmoney.com/sz002150.html" target="_blank" class="stock-link">正泰电源</a></td><td>002150</td><td>38.37</td><td>2板</td><td>22.50亿</td></tr>
+        <tr><td>6</td><td><a href="https://quote.eastmoney.com/sh603803.html" target="_blank" class="stock-link">瑞斯康达</a></td><td>603803</td><td>14.61</td><td>1板</td><td>17.82亿</td></tr>
+        <tr><td>7</td><td><a href="https://quote.eastmoney.com/sh600032.html" target="_blank" class="stock-link">浙江新能</a></td><td>600032</td><td>10.76</td><td>1板</td><td>17.26亿</td></tr>
+        <tr><td>8</td><td><a href="https://quote.eastmoney.com/sh600396.html" target="_blank" class="stock-link">华电辽能</a></td><td>600396</td><td>6.89</td><td>6板</td><td>11.48亿</td></tr>
+        <tr><td>9</td><td><a href="https://quote.eastmoney.com/sz002218.html" target="_blank" class="stock-link">拓日新能</a></td><td>002218</td><td>6.59</td><td>1板</td><td>12.23亿</td></tr>
+        <tr><td>10</td><td><a href="https://quote.eastmoney.com/sh603687.html" target="_blank" class="stock-link">大胜达</a></td><td>603687</td><td>14.73</td><td>4板</td><td>24.05亿</td></tr>
+      </tbody>
+    </table>
+
+    <div class="divider"></div>
+    <h3 style="font-size:13px;color:#16a34a;margin-bottom:8px">📉 跌停前5</h3>
+    <table>
+      <thead>
+        <tr><th>股票</th><th>代码</th><th>收盘价</th><th>跌幅</th><th>原因</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://quote.eastmoney.com/sh600703.html" target="_blank" class="stock-link-green">三安光电</a></td>
+          <td>600703</td><td>14.89</td><td class="green">-9.98%</td>
+          <td>实控人林秀成被留置，一字跌停</td>
+        </tr>
+        <tr>
+          <td><a href="https://quote.eastmoney.com/sz002208.html" target="_blank" class="stock-link-green">合肥城建</a></td>
+          <td>002208</td><td>12.52</td><td class="green">-9.99%</td>
+          <td>2连跌停，地产股普跌</td>
+        </tr>
+        <tr>
+          <td><a href="https://quote.eastmoney.com/sh600370.html" target="_blank" class="stock-link-green">三房巷</a></td>
+          <td>600370</td><td>2.66</td><td class="green">-10.14%</td>
+          <td>2连跌停，基本面偏弱</td>
+        </tr>
+        <tr>
+          <td><a href="https://quote.eastmoney.com/sz001337.html" target="_blank" class="stock-link-green">四川黄金</a></td>
+          <td>001337</td><td>44.76</td><td class="green">-9.99%</td>
+          <td>黄金价格暴跌拖累黄金股</td>
+        </tr>
+        <tr>
+          <td><a href="https://quote.eastmoney.com/sh600988.html" target="_blank" class="stock-link-green">赤峰黄金</a></td>
+          <td>600988</td><td>36.74</td><td class="green">-10.00%</td>
+          <td>黄金价格暴跌，黄金股全线崩盘</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 今日行业板块全复盘 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🏭</span>
+    <h2>今日行业板块全复盘</h2>
+  </div>
+  <div class="section-body">
+    <div class="two-col">
+      <div class="sub-section">
+        <h3>📈 涨幅前3行业</h3>
+        <table>
+          <thead><tr><th>行业</th><th>涨跌幅</th><th>龙头股</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>电力能源</strong></td>
+              <td class="red">+5.78%</td>
+              <td><a href="https://quote.eastmoney.com/sh600396.html" target="_blank" class="stock-link">华电辽能</a>等</td>
+            </tr>
+            <tr>
+              <td><strong>新能源</strong></td>
+              <td class="red">+5.62%</td>
+              <td><a href="https://quote.eastmoney.com/sz002310.html" target="_blank" class="stock-link">东方新能</a>等</td>
+            </tr>
+            <tr>
+              <td><strong>装备制造</strong></td>
+              <td class="red">+5.17%</td>
+              <td><a href="https://quote.eastmoney.com/sh603803.html" target="_blank" class="stock-link">瑞斯康达</a>等</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sub-section">
+        <h3>📉 跌幅前3行业</h3>
+        <table>
+          <thead><tr><th>行业</th><th>涨跌幅</th><th>龙头跌幅</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>医药生物</strong></td>
+              <td class="green">-6.56%</td>
+              <td>明德生物-10%</td>
+            </tr>
+            <tr>
+              <td><strong>保险金融</strong></td>
+              <td class="green">-4.90%</td>
+              <td>偿付能力传闻</td>
+            </tr>
+            <tr>
+              <td><strong>黄金贵金属</strong></td>
+              <td class="green">-7.89%</td>
+              <td><a href="https://quote.eastmoney.com/sh600988.html" target="_blank" class="stock-link-green">赤峰黄金</a>-10%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="market-comment" style="margin-top:10px">
+      <strong>今日主题热点：</strong>
+      <span class="tag tag-red">能源安全</span>
+      <span class="tag tag-red">低硫燃油</span>
+      <span class="tag tag-red">大豆油农产品</span>
+      <span class="tag tag-blue">宇树科技机器人（IPO受理）</span>
+      <span class="tag tag-blue">Terafab算力</span>
+      <span class="tag tag-green">黄金股集体崩跌</span>
+      今日逆势方向以能源（霍尔木兹海峡博弈）、大豆油（成品油联动）为主；科技、半导体跟随大盘深调。
+    </div>
+  </div>
+</div>
+
+<!-- 今日海外市场收盘 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🌏</span>
+    <h2>今日海外市场收盘情况</h2>
+  </div>
+  <div class="section-body">
+    <div class="two-col">
+      <div class="sub-section">
+        <h3>🌏 亚太市场</h3>
+        <table>
+          <thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr></thead>
+          <tbody>
+            <tr><td><strong>恒生指数</strong></td><td>24,382.47</td><td class="green">▼ -3.54%</td></tr>
+            <tr><td><strong>恒生科技</strong></td><td>4,712.48</td><td class="green">▼ -3.28%</td></tr>
+            <tr><td>富时A50期指</td><td>14,387.58</td><td class="green">▼ -3.01%</td></tr>
+            <tr><td>日经225</td><td>51,515.49</td><td class="green">▼ -3.48%</td></tr>
+            <tr><td><strong>韩国综合</strong></td><td>5,405.75</td><td class="green">▼ -6.49%（最惨）</td></tr>
+            <tr><td>台湾加权</td><td>32,722.50</td><td class="green">▼ -2.45%</td></tr>
+            <tr><td>澳大利亚AS51</td><td>8,372.90</td><td class="green">▼ -0.76%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sub-section">
+        <h3>🌍 欧美市场</h3>
+        <table>
+          <thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr></thead>
+          <tbody>
+            <tr><td>德国DAX</td><td>22,653.86</td><td class="red">▲ +1.22%</td></tr>
+            <tr><td>法国CAC40</td><td>7,726.20</td><td class="red">▲ +0.79%</td></tr>
+            <tr><td>英国富时100</td><td>9,894.15</td><td class="green">▼ -0.24%</td></tr>
+            <tr><td><strong>标普500</strong></td><td>6,581.00</td><td class="red">▲ +1.15%</td></tr>
+            <tr><td>纳斯达克100</td><td>—</td><td><span class="gray">参考标普走势</span></td></tr>
+            <tr><td>道琼斯</td><td>46,208.47</td><td class="red">▲ +1.38%</td></tr>
+            <tr><td>罗素2000</td><td>2,494.23</td><td class="red">▲ +2.29%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="market-comment" style="margin-top:10px">
+      <strong>❗ 重要背离：</strong>今日亚太市场全线暴跌（韩综-6.49%领跌，港股-3.54%，日经-3.48%），而欧美市场却普遍反弹（道指+1.38%，标普+1.15%）。
+      富时A50期指报14,387（-3.01%），预示明日A股开盘仍有压力。亚太下跌主因地缘风险从避险逻辑转向通胀担忧；欧美市场因特朗普就伊朗霍尔木兹海峡问题态度软化而反弹。
+    </div>
+  </div>
+</div>
+
+<!-- 今日大宗商品收盘 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🥇</span>
+    <h2>今日大宗商品收盘</h2>
+  </div>
+  <div class="section-body">
+    <div class="two-col">
+      <div class="sub-section">
+        <h3>贵金属 & 黄金</h3>
+        <table>
+          <thead><tr><th>品种</th><th>价格</th><th>涨跌</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Au(T+D)现货</strong></td>
+              <td>920.99元/克</td>
+              <td class="green">▼ -119.09（-11.44%）</td>
+            </tr>
+            <tr>
+              <td>Au(T+N1)</td>
+              <td>1,018.15元/克</td>
+              <td class="red">▲ +147.7</td>
+            </tr>
+            <tr>
+              <td>AU期货主力</td>
+              <td>940.00元/克</td>
+              <td class="green">▼ -9.57%</td>
+            </tr>
+            <tr>
+              <td>Ag99.99现货</td>
+              <td>16.484元/克</td>
+              <td class="green">▼ -1.664（-9.17%）</td>
+            </tr>
+            <tr>
+              <td>Ag(T+D)</td>
+              <td>15.269元/克</td>
+              <td class="green">▼ -2.582（-14.46%）</td>
+            </tr>
+            <tr>
+              <td><strong>AG白银期货主力</strong></td>
+              <td>15,411元/千克</td>
+              <td class="green">▼ -12.57%</td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="font-size:11px;color:#718096;margin-top:8px">国际：现货黄金跌5.56%报4246.82美元/盎司；白银跌9.08%；3·23金银暴跌事件引爆全球贵金属抛售</div>
+      </div>
+      <div class="sub-section">
+        <h3>能源 & 工业金属</h3>
+        <table>
+          <thead><tr><th>品种</th><th>主力价格</th><th>涨跌幅</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>布伦特原油(BC)</td>
+              <td>81,380元/桶</td>
+              <td class="green">▼ -2.90%</td>
+            </tr>
+            <tr>
+              <td>低硫燃油(LU)</td>
+              <td>5,980元/吨</td>
+              <td class="red">▲ +6.94%</td>
+            </tr>
+            <tr>
+              <td>铜(CU主力)</td>
+              <td>92,100元/吨</td>
+              <td class="green">▼ -2.79%</td>
+            </tr>
+            <tr>
+              <td>铝(AL主力)</td>
+              <td>23,555元/吨</td>
+              <td class="green">▼ -1.94%</td>
+            </tr>
+            <tr>
+              <td>螺纹钢(RB主力)</td>
+              <td>3,154元/吨</td>
+              <td class="red">▲ +0.99%（平稳）</td>
+            </tr>
+            <tr>
+              <td>铁矿石(I主力)</td>
+              <td>819元/吨</td>
+              <td class="red">▲ +0.43%（平稳）</td>
+            </tr>
+            <tr>
+              <td><strong>大豆油(BZ主力)</strong></td>
+              <td>9,205元/吨</td>
+              <td class="red">▲ +10.47% 🔥</td>
+            </tr>
+            <tr>
+              <td>豆粕(M主力)</td>
+              <td>3,007元/吨</td>
+              <td class="green">▼ -0.73%</td>
+            </tr>
+            <tr>
+              <td>玉米(C主力)</td>
+              <td>2,415元/吨</td>
+              <td class="red">▲ +1.17%</td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="font-size:11px;color:#718096;margin-top:6px">大豆油大涨10.47%：中东油价飙升引发植物油联动；低硫燃油+6.94%：成品油年内最大涨幅政策驱动</div>
+      </div>
+    </div>
+    <div class="sub-section" style="margin-top:10px">
+      <h3>短期融资利率（Shibor）</h3>
+      <div class="fund-row" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="fund-card">
+          <div class="label">隔夜 Shibor</div>
+          <div class="value blue">1.317%</div>
+        </div>
+        <div class="fund-card">
+          <div class="label">7天 Shibor</div>
+          <div class="value blue">1.422%</div>
+        </div>
+        <div class="fund-card">
+          <div class="label">1个月 Shibor</div>
+          <div class="value blue">1.510%</div>
+        </div>
+        <div class="fund-card">
+          <div class="label">3个月 Shibor</div>
+          <div class="value blue">1.518%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 数字货币市场 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">₿</span>
+    <h2>数字货币市场实时行情</h2>
+  </div>
+  <div class="section-body">
+    <div class="stat-chips">
+      <div class="stat-chip">全球加密总市值 <span class="yellow">$2.497万亿</span></div>
+      <div class="stat-chip">BTC市占率 <span class="yellow">56.62%</span></div>
+      <div class="stat-chip">ETH市占率 <span class="blue">10.34%</span></div>
+      <div class="stat-chip">24h总交易量 <span class="red">+82.77%</span></div>
+    </div>
+    <div class="crypto-grid">
+      <div class="crypto-card">
+        <div class="sym">BTC / 比特币</div>
+        <div class="cprice">$70,693</div>
+        <div class="c24h red">▲ +4.19% (24h)</div>
+        <div class="c7d">7d: -5.56%</div>
+      </div>
+      <div class="crypto-card">
+        <div class="sym">ETH / 以太坊</div>
+        <div class="cprice">$2,141.69</div>
+        <div class="c24h red">▲ +4.60% (24h)</div>
+        <div class="c7d">7d: -8.91%</div>
+      </div>
+      <div class="crypto-card">
+        <div class="sym">BNB / 币安币</div>
+        <div class="cprice">$637.40</div>
+        <div class="c24h red">▲ +1.98% (24h)</div>
+        <div class="c7d">7d: -6.21%</div>
+      </div>
+      <div class="crypto-card">
+        <div class="sym">SOL / Solana</div>
+        <div class="cprice">$91.14</div>
+        <div class="c24h red">▲ +5.81% (24h)</div>
+        <div class="c7d">7d: -5.27%</div>
+      </div>
+      <div class="crypto-card">
+        <div class="sym">XRP / 瑞波币</div>
+        <div class="cprice">$1.42</div>
+        <div class="c24h red">▲ +3.00% (24h)</div>
+        <div class="c7d">7d: -7.77%</div>
+      </div>
+      <div class="crypto-card">
+        <div class="sym">DOGE / 狗狗币</div>
+        <div class="cprice">$0.0939</div>
+        <div class="c24h red">▲ +3.84% (24h)</div>
+        <div class="c7d">7d: -8.96%</div>
+      </div>
+      <div class="crypto-card">
+        <div class="sym">SUI</div>
+        <div class="cprice">$0.9494</div>
+        <div class="c24h red">▲ +4.72% (24h)</div>
+        <div class="c7d">7d: -11.51%</div>
+      </div>
+      <div class="crypto-card" style="background:rgba(15,52,96,0.5)">
+        <div class="sym">BTC人民币</div>
+        <div class="cprice" style="font-size:13px">约¥513,030</div>
+        <div class="c24h" style="color:#a0aec0;font-size:10px">汇率参考 7.26</div>
+        <div class="c7d">市占56.62%</div>
+      </div>
+    </div>
+    <div style="font-size:11px;color:#718096;margin-top:10px;text-align:right">
+      数据更新时间：2026-03-24 00:31 UTC（CoinGecko实时数据）
+    </div>
+    <div class="market-comment" style="margin-top:8px">
+      <strong>📌 A股&加密背离信号：</strong>今日A股全线崩跌而比特币同步上涨+4.19%，形成罕见背离，反映机构资金在传统市场大跌时部分流向数字资产避险。SOL领涨+5.81%，显示公链生态资金仍活跃。
+    </div>
+  </div>
+</div>
+
+<!-- 今日重要财经新闻 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">📰</span>
+    <h2>今日重要财经新闻汇总</h2>
+  </div>
+  <div class="section-body">
+    <div class="news-item">
+      <div class="news-star">⭐⭐⭐⭐⭐</div>
+      <div class="news-content">
+        <div class="news-title"><span class="tag tag-red">黄金暴跌</span> 3·23金价银价暴跌事件：国际金价日内跌逾8%，现货黄金跌破4100美元创2025年11月以来新低</div>
+        <div class="news-analysis">背景：国际油价飙升（一度119美元/桶）引爆通胀预期，美联储降息预期大幅降温，叠加机构被迫"卖金救火"。上海黄金交易所发布风险提示通知。A股黄金板块集体跌停，赤峰黄金-25%，国内金店足金价格跌至1370元/克附近。影响：黄金股短期大幅回撤，中长期金价底层逻辑（去美元化、央行购金）未变。</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-star">⭐⭐⭐⭐⭐</div>
+      <div class="news-content">
+        <div class="news-title"><span class="tag tag-red">个股利空</span> 三安光电实控人林秀成被国家监察委员会留置，开盘一字跌停</div>
+        <div class="news-analysis">三安光电（600703）是化合物半导体龙头，市值825亿。林秀成退居幕后约9年后突遭调查，引发市场恐慌。公告显示成交额3.9亿，换手率仅0.52%，封死跌停。影响：化合物半导体、LED板块短期情绪受压，但基本面独立于实控人个人风险。</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-star">⭐⭐⭐⭐</div>
+      <div class="news-content">
+        <div class="news-title"><span class="tag tag-blue">央行货币政策</span> 央行行长潘功胜：将继续实施适度宽松货币政策，运用多种工具保持流动性充裕</div>
+        <div class="news-analysis">潘功胜在中国发展高层论坛2026年年会上发声，明确提及"存款准备金率、政策利率、公开市场操作"等工具，释放强烈宽松信号。影响：A股资金面保障信号，短期被市场情绪压制，中期有利于估值修复。</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-star">⭐⭐⭐⭐</div>
+      <div class="news-content">
+        <div class="news-title"><span class="tag tag-yellow">地缘政治</span> 特朗普要求伊朗开放霍尔木兹海峡，否则打击发电厂；伊朗允许非敌方船只通过</div>
+        <div class="news-analysis">霍尔木兹海峡博弈短暂缓和，国际油价从高位回落（BC期货-2.90%），但低硫燃油因国内成品油调价大涨6.94%。能源安全逻辑驱动能源股逆势大涨。影响：⭐中东局势对能源、化工板块持续扰动，警惕油价再次冲高。</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-star">⭐⭐⭐⭐</div>
+      <div class="news-content">
+        <div class="news-title"><span class="tag tag-blue">IPO受理</span> 上交所受理宇树科技科创板IPO申请，拟融资42.02亿元</div>
+        <div class="news-analysis">宇树科技是A股机器人赛道的焦点标的，此次IPO受理是重磅利好。影响：机器人相关影子股（如大胜达4连板）值得关注，人形机器人赛道情绪有望修复。</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-star">⭐⭐⭐</div>
+      <div class="news-content">
+        <div class="news-title"><span class="tag tag-blue">政策法规</span> 《中华人民共和国金融法（草案）》向社会公开征求意见，拟建立金融市场风险快速反应机制</div>
+        <div class="news-analysis">五部委（司法部+央行+金融监管总局+证监会+外汇局）联合公布草案，明确"稳妥应对市场异常波动、市场恐慌、流动性枯竭等重大风险"。影响：制度层面有利于长期市场稳定性，短期象征意义为主。</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-star">⭐⭐⭐</div>
+      <div class="news-content">
+        <div class="news-title"><span class="tag tag-yellow">科技</span> 马斯克发布Terafab项目：目标年产1太瓦算力，主要部署于太空；微信正式推出ClawBot插件</div>
+        <div class="news-analysis">SpaceX+Tesla联合发布Terafab，目标年产1000~2000亿颗2纳米芯片；微信ClawBot插件上线，AI+社交融合加速。影响：AI算力、半导体、腾讯生态相关个股关注度提升，关注世运电路、中微公司等。</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-star">⭐⭐⭐</div>
+      <div class="news-content">
+        <div class="news-title"><span class="tag tag-blue">外资动态</span> 何立峰会见汇丰、瑞银、西门子医疗、力拓等11家知名跨国公司，称"十五五"将扩大对外开放</div>
+        <div class="news-analysis">跨国公司高管表达对中国经济信心，释放继续加码在华投资信号。影响：外资对华信心指标积极，配合北向今日大举买入352亿，中长期外资配置中国资产逻辑未变。</div>
+      </div>
+    </div>
+    <div class="news-item">
+      <div class="news-star">⭐⭐</div>
+      <div class="news-content">
+        <div class="news-title"><span class="tag tag-yellow">新股</span> 隆源股份（北交所）今日申购，发行价24.70元，拟融资4.20亿元；百利天恒创新药获批临床</div>
+        <div class="news-analysis">北交所新股申购，铝合金精密压铸件标的。百利天恒BL-ARC002获准晚期实体瘤临床试验，创新药商业化推进。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 明日市场展望 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🔭</span>
+    <h2>明日市场展望（3月24日，周二）</h2>
+  </div>
+  <div class="section-body">
+    <div class="two-col">
+      <div class="sub-section">
+        <h3>📅 明日重要数据与事件</h3>
+        <div class="outlook-item">
+          <div class="outlook-dot"></div>
+          <div style="font-size:13px;color:#a0aec0">关注是否有政策托底信号出炉（稳市基金、证监会表态等）</div>
+        </div>
+        <div class="outlook-item">
+          <div class="outlook-dot"></div>
+          <div style="font-size:13px;color:#a0aec0">关注外资北向是否持续净买入（连续买入将提振情绪）</div>
+        </div>
+        <div class="outlook-item">
+          <div class="outlook-dot"></div>
+          <div style="font-size:13px;color:#a0aec0">中东局势最新进展（霍尔木兹海峡谈判动向）</div>
+        </div>
+        <div class="outlook-item">
+          <div class="outlook-dot"></div>
+          <div style="font-size:13px;color:#a0aec0">隆源股份北交所上市（算力、铝合金方向关注）</div>
+        </div>
+        <div class="outlook-item">
+          <div class="outlook-dot"></div>
+          <div style="font-size:13px;color:#a0aec0">金融法草案征求意见反馈情况</div>
+        </div>
+      </div>
+      <div class="sub-section">
+        <h3>📈 技术面简评</h3>
+        <div class="outlook-item">
+          <div class="outlook-dot" style="background:#e84040"></div>
+          <div style="font-size:13px;color:#a0aec0"><strong style="color:#e2e8f0">上证支撑位：</strong>3800点为强心理整数关，若失守则下看3750附近前低</div>
+        </div>
+        <div class="outlook-item">
+          <div class="outlook-dot" style="background:#e84040"></div>
+          <div style="font-size:13px;color:#a0aec0"><strong style="color:#e2e8f0">上证压力位：</strong>3900点~3950点为密集套牢区，短期反弹压力较大</div>
+        </div>
+        <div class="outlook-item">
+          <div class="outlook-dot" style="background:#f6c90e"></div>
+          <div style="font-size:13px;color:#a0aec0"><strong style="color:#e2e8f0">北向352亿逆势买入</strong>：历史上北向大买次日A股往往企稳反弹</div>
+        </div>
+        <div class="outlook-item">
+          <div class="outlook-dot" style="background:#16a34a"></div>
+          <div style="font-size:13px;color:#a0aec0"><strong style="color:#e2e8f0">分析师提示：</strong>本周三（3月25日）或有技术面日线低9节点，需密切观察</div>
+        </div>
+        <div class="outlook-item">
+          <div class="outlook-dot" style="background:#16a34a"></div>
+          <div style="font-size:13px;color:#a0aec0"><strong style="color:#e2e8f0">富时A50期指</strong> -3.01%，预示明日沪深A股开盘仍有压力，注意低开幅度</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 杭州上市公司股东大会 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🏙️</span>
+    <h2>近期杭州上市公司股东大会（未来7天）</h2>
+  </div>
+  <div class="section-body">
+    <div class="market-comment" style="margin-bottom:12px">
+      以下为3月23日至3月30日内，在杭州地区召开股东大会的上市公司（数据来源：上交所/深交所公告）
+    </div>
+    <table>
+      <thead>
+        <tr><th>公司名称</th><th>代码</th><th>会议日期</th><th>主要议题</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://quote.eastmoney.com/sh600032.html" target="_blank" class="stock-link">浙江新能</a></td>
+          <td>600032</td>
+          <td>3月25日</td>
+          <td>2025年度利润分配方案、修订公司章程</td>
+        </tr>
+        <tr>
+          <td><a href="https://quote.eastmoney.com/sh603105.html" target="_blank" class="stock-link">芯能科技</a></td>
+          <td>603105</td>
+          <td>3月26日</td>
+          <td>审议年度报告、独立董事换届选举</td>
+        </tr>
+        <tr>
+          <td><a href="https://quote.eastmoney.com/sh603529.html" target="_blank" class="stock-link">爱玛科技</a></td>
+          <td>603529</td>
+          <td>3月27日</td>
+          <td>2025年度财务报告、股权激励方案</td>
+        </tr>
+        <tr>
+          <td><span class="gray">数据提示</span></td>
+          <td>—</td>
+          <td>—</td>
+          <td>具体股东大会时间请以上交所/深交所公告为准，如有变更以最新通知为准</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <div style="margin-bottom:6px">⚠️ 本报告仅供信息参考，不构成投资建议，投资有风险，入市需谨慎</div>
+  <div>A股数据来源：Tushare金融数据平台 | 数字货币数据来源：CoinGecko（更新时间：2026-03-24 00:31 UTC）</div>
+  <div style="margin-top:4px">国际指数数据来源：Tushare index_global | 财经事件来源：金融界/中新网/百度百科等</div>
+  <div style="margin-top:8px;color:#718096">© 2026 金融市场晚报 · 3月23日收盘复盘版 · 自动化生成</div>
+</div>
+
+</div><!-- end container -->
 </body>
 </html>
