@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>市场早报 | 2026年3月25日</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --card2: #1c2230;
+    --border: #30363d;
+    --accent: #58a6ff;
+    --accent2: #388bfd;
+    --red: #f85149;
+    --green: #3fb950;
+    --gold: #d29922;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --tag-bg: #1f3a5f;
+    --gradient1: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'PingFang SC', 'Helvetica Neue', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    background: linear-gradient(135deg, #0d1117 0%, #0f1923 40%, #131c2b 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 28px 40px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(88,166,255,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .header-left .title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  .header-left .subtitle {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .header-right {
+    text-align: right;
+  }
+  .date-badge {
+    display: inline-block;
+    background: rgba(88,166,255,0.15);
+    border: 1px solid rgba(88,166,255,0.3);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .gen-time {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  /* ===== LAYOUT ===== */
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 24px 28px 48px;
+  }
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 28px 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ===== INDEX GRID ===== */
+  .index-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+  .index-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .index-card:hover { border-color: var(--accent); }
+  .index-card.up { border-left: 3px solid var(--red); }
+  .index-card.down { border-left: 3px solid var(--green); }
+  .index-name { font-size: 12px; color: var(--muted); font-weight: 500; }
+  .index-close { font-size: 22px; font-weight: 700; color: var(--text); margin: 6px 0 4px; }
+  .index-change { font-size: 13px; font-weight: 600; }
+  .index-card.up .index-change { color: var(--red); }
+  .index-card.down .index-change { color: var(--green); }
+  .index-vol { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+  /* ===== DATA TABLE ===== */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .data-table th {
+    background: var(--card2);
+    color: var(--muted);
+    font-weight: 600;
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+  .data-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(48,54,61,0.5);
+    vertical-align: middle;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .up-text { color: var(--red); font-weight: 600; }
+  .down-text { color: var(--green); font-weight: 600; }
+  .neutral { color: var(--muted); }
+
+  /* ===== CARD WRAPPER ===== */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+
+  /* ===== TWO COL LAYOUT ===== */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* ===== LIMIT BOARD ===== */
+  .limit-header {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .limit-header .title { font-size: 14px; font-weight: 700; color: var(--text); }
+  .limit-count {
+    font-size: 22px;
+    font-weight: 800;
+  }
+  .limit-count.red { color: var(--red); }
+  .limit-count.green { color: var(--green); }
+
+  /* ===== TAGS ===== */
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .tag-up { background: rgba(248,81,73,0.15); color: var(--red); }
+  .tag-down { background: rgba(63,185,80,0.15); color: var(--green); }
+  .tag-limit { background: rgba(248,81,73,0.25); color: #ff6b6b; border: 1px solid rgba(248,81,73,0.4); }
+  .tag-n { background: rgba(88,166,255,0.1); color: var(--accent); font-size: 10px; padding: 1px 5px; }
+
+  /* ===== MONEY FLOW ===== */
+  .flow-bar-wrap {
+    padding: 16px 18px;
+  }
+  .flow-item {
+    margin-bottom: 12px;
+  }
+  .flow-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .flow-label .val { font-weight: 700; font-size: 13px; }
+  .flow-bar {
+    height: 6px;
+    border-radius: 3px;
+    background: var(--border);
+    overflow: hidden;
+  }
+  .flow-bar-inner {
+    height: 100%;
+    border-radius: 3px;
+  }
+  .bar-red { background: var(--red); }
+  .bar-green { background: var(--green); }
+
+  /* ===== GLOBAL MARKET ===== */
+  .global-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 16px;
+  }
+  .global-item {
+    background: var(--card2);
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid var(--border);
+  }
+  .global-item .mkt-name { font-size: 11px; color: var(--muted); }
+  .global-item .mkt-val { font-size: 16px; font-weight: 700; margin: 3px 0; }
+  .global-item .mkt-chg { font-size: 12px; font-weight: 600; }
+
+  /* ===== CRYPTO ===== */
+  .crypto-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    padding: 16px;
+  }
+  .crypto-item {
+    background: var(--card2);
+    border-radius: 8px;
+    padding: 12px 10px;
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+  .crypto-symbol { font-size: 13px; font-weight: 700; color: var(--accent); }
+  .crypto-price { font-size: 14px; font-weight: 700; margin: 4px 0; }
+  .crypto-chg { font-size: 12px; font-weight: 600; }
+
+  /* ===== SHIBOR ===== */
+  .shibor-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 16px;
+  }
+  .shibor-item {
+    background: var(--card2);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+  .shibor-label { font-size: 11px; color: var(--muted); }
+  .shibor-val { font-size: 18px; font-weight: 700; color: var(--gold); margin: 4px 0; }
+  .shibor-unit { font-size: 10px; color: var(--muted); }
+
+  /* ===== SECTOR ===== */
+  .sector-row {
+    display: flex;
+    gap: 10px;
+    padding: 14px 16px;
+    flex-wrap: wrap;
+  }
+  .sector-chip {
+    background: var(--card2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 120px;
+  }
+  .sector-chip .s-name { color: var(--text); font-weight: 600; }
+  .sector-chip .s-chg { font-weight: 700; font-size: 13px; }
+
+  /* ===== NEWS ===== */
+  .news-list { padding: 8px 0; }
+  .news-item {
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(48,54,61,0.4);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .news-item:last-child { border-bottom: none; }
+  .news-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+  .news-text { font-size: 13px; color: var(--text); line-height: 1.6; }
+  .news-source { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* ===== GOLD ===== */
+  .gold-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 16px;
+  }
+  .gold-item {
+    background: var(--card2);
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid var(--border);
+  }
+  .gold-item .g-code { font-size: 11px; color: var(--muted); }
+  .gold-item .g-price { font-size: 18px; font-weight: 700; color: var(--gold); margin: 4px 0; }
+  .gold-item .g-chg { font-size: 12px; font-weight: 600; }
+
+  /* ===== STAT ROW ===== */
+  .stat-row {
+    display: flex;
+    gap: 16px;
+    padding: 16px 18px;
+    flex-wrap: wrap;
+  }
+  .stat-item {
+    flex: 1;
+    min-width: 120px;
+    background: var(--card2);
+    border-radius: 8px;
+    padding: 14px;
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+  .stat-label { font-size: 11px; color: var(--muted); }
+  .stat-val { font-size: 22px; font-weight: 800; margin: 4px 0; }
+  .stat-sub { font-size: 11px; color: var(--muted); }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 20px 28px;
+    color: var(--muted);
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.8;
+    background: var(--card);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .index-grid { grid-template-columns: repeat(3, 1fr); }
+    .global-grid { grid-template-columns: repeat(3, 1fr); }
+    .crypto-grid { grid-template-columns: repeat(3, 1fr); }
+    .two-col, .three-col { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .index-grid { grid-template-columns: repeat(2, 1fr); }
+    .global-grid { grid-template-columns: repeat(2, 1fr); }
+    .crypto-grid { grid-template-columns: repeat(2, 1fr); }
+    .container { padding: 16px; }
+    .header { padding: 18px 16px; }
+    .shibor-grid { grid-template-columns: repeat(2, 1fr); }
+    .gold-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<div class="header">
+  <div class="header-top">
+    <div class="header-left">
+      <div class="title">📊 市场早报</div>
+      <div class="subtitle">数据截至 2026年3月24日 收盘 · 涵盖A股、期货、黄金、加密货币、全球市场</div>
+    </div>
+    <div class="header-right">
+      <div class="date-badge">2026年3月25日 星期三</div>
+      <div class="gen-time">生成时间：09:18 AM</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ===== A股指数 ===== -->
+  <div class="section-title">🇨🇳 A股指数（昨日收盘）</div>
+  <div class="index-grid">
+    <!-- 上证指数：close=3881.28, pre=3813.28, chg=+67.99, pct=+1.78% -->
+    <div class="index-card up">
+      <div class="index-name">上证指数</div>
+      <div class="index-close">3,881.28</div>
+      <div class="index-change">▲ +67.99 &nbsp; +1.78%</div>
+      <div class="index-vol">成交额 9,314 亿</div>
+    </div>
+    <!-- 深证成指：close=13536.56, pre=13345.51, chg=+191.04, pct=+1.43% -->
+    <div class="index-card up">
+      <div class="index-name">深证成指</div>
+      <div class="index-close">13,536.56</div>
+      <div class="index-change">▲ +191.04 &nbsp; +1.43%</div>
+      <div class="index-vol">成交额 11,514 亿</div>
+    </div>
+    <!-- 创业板指：close=3251.55, pre=3235.22, chg=+16.32, pct=+0.50% -->
+    <div class="index-card up">
+      <div class="index-name">创业板指</div>
+      <div class="index-close">3,251.55</div>
+      <div class="index-change">▲ +16.32 &nbsp; +0.50%</div>
+      <div class="index-vol">成交额 5,154 亿</div>
+    </div>
+    <!-- 科创50：close=1290.79, pre=1261.44, chg=+29.35, pct=+2.33% -->
+    <div class="index-card up">
+      <div class="index-name">科创50</div>
+      <div class="index-close">1,290.79</div>
+      <div class="index-change">▲ +29.35 &nbsp; +2.33%</div>
+      <div class="index-vol">成交额 673 亿</div>
+    </div>
+    <!-- 沪深300：close=4474.72, pre=4417.99, chg=+56.73, pct=+1.28% -->
+    <div class="index-card up">
+      <div class="index-name">沪深300</div>
+      <div class="index-close">4,474.72</div>
+      <div class="index-change">▲ +56.73 &nbsp; +1.28%</div>
+      <div class="index-vol">成交额 5,301 亿</div>
+    </div>
+  </div>
+
+  <!-- ===== 涨跌停 + 资金 ===== -->
+  <div class="section-title">🔥 涨跌停 &amp; 资金流向</div>
+  <div class="two-col">
+
+    <!-- 涨跌停统计 -->
+    <div class="card">
+      <div class="limit-header">
+        <div>
+          <div class="title">涨跌停板</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:2px;">3月24日数据</div>
+        </div>
+        <div style="display:flex;gap:24px;">
+          <div style="text-align:center;">
+            <div class="limit-count red">83</div>
+            <div style="font-size:11px;color:var(--muted);">涨停</div>
+          </div>
+          <div style="text-align:center;">
+            <div class="limit-count green">1</div>
+            <div style="font-size:11px;color:var(--muted);">跌停</div>
+          </div>
+        </div>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>股票</th>
+            <th>代码</th>
+            <th style="text-align:right;">收盘价</th>
+            <th style="text-align:right;">涨幅</th>
+            <th style="text-align:right;">成交额</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><b>金开新能</b></td><td class="neutral">600821</td><td style="text-align:right;">11.07</td><td style="text-align:right;" class="up-text">+10.04%</td><td style="text-align:right;">64.4亿</td></tr>
+          <tr><td><b>节能风电</b></td><td class="neutral">601016</td><td style="text-align:right;">4.91</td><td style="text-align:right;" class="up-text">+10.09%</td><td style="text-align:right;">54.8亿</td></tr>
+          <tr><td><b>长飞光纤</b></td><td class="neutral">601869</td><td style="text-align:right;">233.31</td><td style="text-align:right;" class="up-text">+10.00%</td><td style="text-align:right;">43.2亿</td></tr>
+          <tr><td><b>中远海能</b></td><td class="neutral">600026</td><td style="text-align:right;">25.87</td><td style="text-align:right;" class="up-text">+9.99%</td><td style="text-align:right;">36.6亿</td></tr>
+          <tr><td><b>云南锗业</b></td><td class="neutral">002428</td><td style="text-align:right;">44.66</td><td style="text-align:right;" class="up-text">+10.00%</td><td style="text-align:right;">36.0亿</td></tr>
+          <tr><td><b>华银电力</b></td><td class="neutral">600744</td><td style="text-align:right;">8.77</td><td style="text-align:right;" class="up-text">+10.04%</td><td style="text-align:right;">26.4亿</td></tr>
+          <tr><td><b>汉缆股份</b></td><td class="neutral">002498</td><td style="text-align:right;">8.80</td><td style="text-align:right;" class="up-text">+10.00%</td><td style="text-align:right;">26.3亿</td></tr>
+          <tr><td><b>大中矿业</b></td><td class="neutral">001203</td><td style="text-align:right;">40.26</td><td style="text-align:right;" class="up-text">+10.00%</td><td style="text-align:right;">25.5亿</td></tr>
+          <tr><td><b>韶能股份</b><span class="tag tag-n" style="margin-left:4px;">2板</span></td><td class="neutral">000601</td><td style="text-align:right;">8.06</td><td style="text-align:right;" class="up-text">+9.96%</td><td style="text-align:right;">22.5亿</td></tr>
+          <tr><td><b>浙江新能</b></td><td class="neutral">600032</td><td style="text-align:right;">11.84</td><td style="text-align:right;" class="up-text">+10.04%</td><td style="text-align:right;">19.9亿</td></tr>
+        </tbody>
+      </table>
+      <div style="padding:10px 14px;background:rgba(63,185,80,0.05);border-top:1px solid var(--border);">
+        <span style="color:var(--green);font-size:12px;">▼ 跌停：</span>
+        <span style="font-size:12px;">华达科技 (603358) &nbsp; 36.27 &nbsp; <span class="down-text">-10.00%</span> &nbsp; 2连板跌停</span>
+      </div>
+    </div>
+
+    <!-- 北向资金 + 大盘资金流向 -->
+    <div class="card">
+      <div class="limit-header">
+        <div>
+          <div class="title">资金流向</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:2px;">北向资金（3月24日）</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:22px;font-weight:800;color:var(--red);">+289.3亿</div>
+          <div style="font-size:11px;color:var(--muted);">北向净流入</div>
+        </div>
+      </div>
+      <div style="padding:14px 18px;border-bottom:1px solid var(--border);">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div style="background:var(--card2);border-radius:8px;padding:12px;border:1px solid var(--border);">
+            <div style="font-size:11px;color:var(--muted);">沪股通（HGT）</div>
+            <div style="font-size:18px;font-weight:700;color:var(--red);margin:4px 0;">+134.3亿</div>
+          </div>
+          <div style="background:var(--card2);border-radius:8px;padding:12px;border:1px solid var(--border);">
+            <div style="font-size:11px;color:var(--muted);">深股通（SGT）</div>
+            <div style="font-size:18px;font-weight:700;color:var(--red);margin:4px 0;">+155.0亿</div>
+          </div>
+          <div style="background:var(--card2);border-radius:8px;padding:12px;border:1px solid var(--border);">
+            <div style="font-size:11px;color:var(--muted);">港股通沪（GGT-SS）</div>
+            <div style="font-size:18px;font-weight:700;color:var(--red);margin:4px 0;">+292.3亿</div>
+          </div>
+          <div style="background:var(--card2);border-radius:8px;padding:12px;border:1px solid var(--border);">
+            <div style="font-size:11px;color:var(--muted);">港股通深（GGT-SZ）</div>
+            <div style="font-size:18px;font-weight:700;color:var(--red);margin:4px 0;">+238.0亿</div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:14px 18px;">
+        <div style="font-size:12px;color:var(--muted);margin-bottom:10px;">⚡ 昨日板块热点概览</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <span style="background:rgba(248,81,73,0.15);color:var(--red);border:1px solid rgba(248,81,73,0.3);padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600;">⚡ 电力/新能源 强势</span>
+          <span style="background:rgba(248,81,73,0.15);color:var(--red);border:1px solid rgba(248,81,73,0.3);padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600;">📡 光纤通信 涨停</span>
+          <span style="background:rgba(248,81,73,0.15);color:var(--red);border:1px solid rgba(248,81,73,0.3);padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600;">🚢 航运板块 活跃</span>
+          <span style="background:rgba(248,81,73,0.15);color:var(--red);border:1px solid rgba(248,81,73,0.3);padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600;">⛏️ 矿业/锗 稀有金属</span>
+          <span style="background:rgba(63,185,80,0.1);color:var(--green);border:1px solid rgba(63,185,80,0.3);padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600;">📉 华达科技 连跌停</span>
+        </div>
+        <div style="margin-top:12px;background:var(--card2);border-radius:8px;padding:12px;border:1px solid var(--border);border-left:3px solid var(--accent);">
+          <div style="font-size:12px;color:var(--muted);">市场情绪</div>
+          <div style="font-size:13px;margin-top:4px;">昨日A股全面反弹，上证涨 <b style="color:var(--red);">+1.78%</b>，结束3连跌。涨停83只，跌停仅1只，多头情绪显著回暖，北向资金大幅净流入 <b style="color:var(--red);">289亿</b>，做多信号明确。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 今日要关注 ===== -->
+  <div class="section-title">📌 今日关注重点</div>
+  <div class="card">
+    <div class="news-list">
+      <div class="news-item">
+        <div class="news-dot" style="background:#f85149;"></div>
+        <div>
+          <div class="news-text">【今日开盘观察】三大指数开盘涨跌不一，<b>创业板指涨0.08%</b>，汽车、家电等板块涨幅居前，市场承接昨日反弹。</div>
+          <div class="news-source">来源：每日经济新闻 · 2026-03-25 09:26</div>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-dot" style="background:#f0b429;"></div>
+        <div>
+          <div class="news-text">【美股前夜】美股三大指数小幅波动，道指跌0.18%、标普跌0.37%，芯片板块受<b>特朗普称叫停对伊朗发电厂打击</b>消息影响，市场情绪有所缓解。</div>
+          <div class="news-source">来源：新浪财经 · 3月24日隔夜要闻</div>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-dot" style="background:#388bfd;"></div>
+        <div>
+          <div class="news-text">【港股强势】恒生指数昨日大涨<b>+2.79%</b>至25,063点，港科指涨2.51%，内资做多港股力度显著，南向资金持续净流入超530亿。</div>
+          <div class="news-source">来源：市场数据</div>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-dot" style="background:#3fb950;"></div>
+        <div>
+          <div class="news-text">【宇树科技IPO】宇树科技科创板IPO申请获受理，融资42亿，2025年营收17.08亿元，扣非净利润6亿元，<b>A股人形机器人第一股</b>即将落地，机器人赛道或有炒作机会。</div>
+          <div class="news-source">来源：新浪财经 · 3月20日</div>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-dot" style="background:#d29922;"></div>
+        <div>
+          <div class="news-text">【黄金再创新高】上海黄金交易所Au99.99昨日收于<b>979.56元/克</b>，国际金价维持高位震荡，避险情绪支撑金价。</div>
+          <div class="news-source">来源：上海黄金交易所 · 2026-03-24</div>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-dot"></div>
+        <div>
+          <div class="news-text">【关税博弈持续】特朗普关税政策不确定性持续扰动，但中美均表达缓和意愿，对出口链、周期品影响需保持关注。</div>
+          <div class="news-source">来源：综合报道</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 全球市场 ===== -->
+  <div class="section-title">🌏 全球主要市场（3月24日收盘）</div>
+  <div class="card">
+    <div class="global-grid">
+      <!-- 亚太 -->
+      <div class="global-item">
+        <div class="mkt-name">🇭🇰 恒生指数</div>
+        <div class="mkt-val up-text">25,063.71</div>
+        <div class="mkt-chg up-text">▲ +681.24 &nbsp; +2.79%</div>
+      </div>
+      <div class="global-item">
+        <div class="mkt-name">🇭🇰 国企指数</div>
+        <div class="mkt-val up-text">3,780.95</div>
+        <div class="mkt-chg up-text">▲ +105.29 &nbsp; +2.86%</div>
+      </div>
+      <div class="global-item">
+        <div class="mkt-name">🇭🇰 恒生科技</div>
+        <div class="mkt-val up-text">4,830.89</div>
+        <div class="mkt-chg up-text">▲ +118.41 &nbsp; +2.51%</div>
+      </div>
+      <div class="global-item">
+        <div class="mkt-name">🇯🇵 日经225</div>
+        <div class="mkt-val up-text">52,252.28</div>
+        <div class="mkt-chg up-text">▲ +736.79 &nbsp; +1.43%</div>
+      </div>
+      <div class="global-item">
+        <div class="mkt-name">🇰🇷 韩国综合</div>
+        <div class="mkt-val up-text">5,553.92</div>
+        <div class="mkt-chg up-text">▲ +148.17 &nbsp; +2.74%</div>
+      </div>
+      <div class="global-item">
+        <div class="mkt-name">🇮🇳 印度孟买</div>
+        <div class="mkt-val up-text">74,068.44</div>
+        <div class="mkt-chg up-text">▲ +1372.06 &nbsp; +1.89%</div>
+      </div>
+      <div class="global-item">
+        <div class="mkt-name">🇹🇼 台湾加权</div>
+        <div class="mkt-val down-text">32,612.24</div>
+        <div class="mkt-chg down-text">▼ -110.26 &nbsp; -0.34%</div>
+      </div>
+      <div class="global-item">
+        <div class="mkt-name">🇦🇺 澳大利亚</div>
+        <div class="mkt-val up-text">8,384.00</div>
+        <div class="mkt-chg up-text">▲ +11.10 &nbsp; +0.13%</div>
+      </div>
+      <!-- 欧美 -->
+      <div class="global-item">
+        <div class="mkt-name">🇺🇸 道琼斯</div>
+        <div class="mkt-val down-text">46,124.06</div>
+        <div class="mkt-chg down-text">▼ -84.41 &nbsp; -0.18%</div>
+      </div>
+      <div class="global-item">
+        <div class="mkt-name">🇺🇸 标普500</div>
+        <div class="mkt-val down-text">6,556.37</div>
+        <div class="mkt-chg down-text">▼ -24.63 &nbsp; -0.37%</div>
+      </div>
+      <div class="global-item">
+        <div class="mkt-name">🇩🇪 德国DAX</div>
+        <div class="mkt-val down-text">22,636.91</div>
+        <div class="mkt-chg down-text">▼ -16.95 &nbsp; -0.07%</div>
+      </div>
+      <div class="global-item">
+        <div class="mkt-name">🇬🇧 富时100</div>
+        <div class="mkt-val up-text">9,965.16</div>
+        <div class="mkt-chg up-text">▲ +71.01 &nbsp; +0.72%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 黄金 + Shibor ===== -->
+  <div class="section-title">🥇 黄金现货 &amp; 货币市场利率</div>
+  <div class="two-col">
+    <div class="card">
+      <div style="padding:12px 16px;border-bottom:1px solid var(--border);font-size:13px;font-weight:700;color:var(--gold);">🥇 上海黄金交易所（3月24日）</div>
+      <div class="gold-grid">
+        <div class="gold-item">
+          <div class="g-code">Au99.99</div>
+          <div class="g-price">979.56 <span style="font-size:11px;color:var(--muted);">元/克</span></div>
+          <div class="g-chg up-text">▲ +54.91</div>
+        </div>
+        <div class="gold-item">
+          <div class="g-code">Au(T+D)</div>
+          <div class="g-price">977.99 <span style="font-size:11px;color:var(--muted);">元/克</span></div>
+          <div class="g-chg up-text">▲ +0.34</div>
+        </div>
+        <div class="gold-item">
+          <div class="g-code">Au99.95</div>
+          <div class="g-price">980.34 <span style="font-size:11px;color:var(--muted);">元/克</span></div>
+          <div class="g-chg up-text">▲ +50.54</div>
+        </div>
+        <div class="gold-item">
+          <div class="g-code">Ag99.99</div>
+          <div class="g-price">17.164 <span style="font-size:11px;color:var(--muted);">元/克</span></div>
+          <div class="g-chg up-text">▲ +0.68</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="padding:12px 16px;border-bottom:1px solid var(--border);font-size:13px;font-weight:700;color:var(--gold);">📈 Shibor 利率（3月24日）</div>
+      <div class="shibor-grid">
+        <div class="shibor-item">
+          <div class="shibor-label">隔夜 ON</div>
+          <div class="shibor-val">1.318%</div>
+          <div class="shibor-unit">年化</div>
+        </div>
+        <div class="shibor-item">
+          <div class="shibor-label">1周 1W</div>
+          <div class="shibor-val">1.417%</div>
+          <div class="shibor-unit">年化</div>
+        </div>
+        <div class="shibor-item">
+          <div class="shibor-label">1月 1M</div>
+          <div class="shibor-val">1.504%</div>
+          <div class="shibor-unit">年化</div>
+        </div>
+        <div class="shibor-item">
+          <div class="shibor-label">3月 3M</div>
+          <div class="shibor-val">1.516%</div>
+          <div class="shibor-unit">年化</div>
+        </div>
+        <div class="shibor-item">
+          <div class="shibor-label">6月 6M</div>
+          <div class="shibor-val">1.527%</div>
+          <div class="shibor-unit">年化</div>
+        </div>
+        <div class="shibor-item">
+          <div class="shibor-label">1年 1Y</div>
+          <div class="shibor-val">1.547%</div>
+          <div class="shibor-unit">年化</div>
+        </div>
+        <div class="shibor-item">
+          <div class="shibor-label">9月 9M</div>
+          <div class="shibor-val">1.538%</div>
+          <div class="shibor-unit">年化</div>
+        </div>
+        <div class="shibor-item">
+          <div class="shibor-label">2周 2W</div>
+          <div class="shibor-val">1.512%</div>
+          <div class="shibor-unit">年化</div>
+        </div>
+      </div>
+      <div style="padding:8px 16px;font-size:11px;color:var(--muted);">资金面较为宽松，隔夜利率维持低位，短端利率曲线平坦。</div>
+    </div>
+  </div>
+
+  <!-- ===== 加密货币 ===== -->
+  <div class="section-title">₿ 加密货币（实时价格）</div>
+  <div class="card">
+    <div class="crypto-grid">
+      <div class="crypto-item">
+        <div class="crypto-symbol">BTC</div>
+        <div class="crypto-price">$70,733</div>
+        <div class="crypto-chg neutral">±0.00%</div>
+      </div>
+      <div class="crypto-item">
+        <div class="crypto-symbol">ETH</div>
+        <div class="crypto-price">$2,159</div>
+        <div class="crypto-chg up-text">▲ +0.64%</div>
+      </div>
+      <div class="crypto-item">
+        <div class="crypto-symbol">BNB</div>
+        <div class="crypto-price">$639</div>
+        <div class="crypto-chg up-text">▲ +0.49%</div>
+      </div>
+      <div class="crypto-item">
+        <div class="crypto-symbol">XRP</div>
+        <div class="crypto-price">$1.42</div>
+        <div class="crypto-chg down-text">▼ -0.18%</div>
+      </div>
+      <div class="crypto-item">
+        <div class="crypto-symbol">SOL</div>
+        <div class="crypto-price">$91.10</div>
+        <div class="crypto-chg up-text">▲ +0.28%</div>
+      </div>
+      <div class="crypto-item">
+        <div class="crypto-symbol">DOGE</div>
+        <div class="crypto-price">$0.0949</div>
+        <div class="crypto-chg up-text">▲ +1.61%</div>
+      </div>
+    </div>
+    <div style="padding:8px 16px 12px;font-size:11px;color:var(--muted);">数据来源：CoinGecko · 更新时间约 2026-03-25 01:20 UTC。BTC维持7万美元平台，整体加密市场小幅震荡。</div>
+  </div>
+
+  <!-- ===== 今日策略提示 ===== -->
+  <div class="section-title">💡 今日策略参考</div>
+  <div class="card">
+    <div style="padding:20px 22px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+        <div style="background:rgba(248,81,73,0.07);border:1px solid rgba(248,81,73,0.25);border-radius:10px;padding:16px;">
+          <div style="font-size:12px;color:var(--red);font-weight:700;margin-bottom:8px;">🔥 关注方向</div>
+          <div style="font-size:12px;line-height:1.8;color:var(--text);">
+            ⚡ <b>电力/新能源</b> —— 昨日涨停数量最多板块，关注出量换手后是否延续<br>
+            📡 <b>光纤通信</b> —— 长飞光纤涨停，AI建网需求支撑<br>
+            🤖 <b>人形机器人</b> —— 宇树科技IPO获受理，概念或有催化<br>
+            🚢 <b>航运</b> —— 中远海能活跃，油运基本面稳健
+          </div>
+        </div>
+        <div style="background:rgba(63,185,80,0.07);border:1px solid rgba(63,185,80,0.25);border-radius:10px;padding:16px;">
+          <div style="font-size:12px;color:var(--green);font-weight:700;margin-bottom:8px;">⚠️ 风险提示</div>
+          <div style="font-size:12px;line-height:1.8;color:var(--text);">
+            📉 <b>高位獲利盤压力</b> —— 昨日反弹成交量萎缩，多头持续性存疑<br>
+            🔻 <b>量能不足</b> —— 需观察今日量能是否放大<br>
+            🌐 <b>外盘扰动</b> —— 美股继续小幅下行，关注美联储政策动向<br>
+            ❄️ <b>关税风险</b> —— 贸易摩擦对出口型企业影响持续
+          </div>
+        </div>
+        <div style="background:rgba(88,166,255,0.07);border:1px solid rgba(88,166,255,0.25);border-radius:10px;padding:16px;">
+          <div style="font-size:12px;color:var(--accent);font-weight:700;margin-bottom:8px;">📊 关键数据追踪</div>
+          <div style="font-size:12px;line-height:1.8;color:var(--text);">
+            🏦 <b>北向资金</b> —— 连续净流入，观察今日是否延续<br>
+            💰 <b>量能</b> —— 沪深总成交 9300+亿，需关注是否放量<br>
+            🥇 <b>黄金</b> —— Au99.99近980元/克高位，关注回调风险<br>
+            ₿ <b>BTC</b> —— 维持7万美元，未形成有效突破
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div>市场早报 · 2026年3月25日 &nbsp;|&nbsp; 数据截至 2026-03-24 收盘 &nbsp;|&nbsp; 生成时间 09:18</div>
+  <div style="margin-top:4px;">数据来源：Tushare金融数据平台 · 上海黄金交易所 · CoinGecko &nbsp;|&nbsp; 本报告仅供参考，不构成投资建议，投资有风险，入市需谨慎</div>
+</div>
+
+</body>
+</html>
