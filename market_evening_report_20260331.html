@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金融市场晚报 - 2026年3月31日</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin: 5px 0;
+        }
+        
+        .header .time {
+            font-size: 0.78em;
+            opacity: 0.75;
+            margin-top: 6px;
+            letter-spacing: 0.5px;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section-title {
+            font-size: 1.3em;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #0f3460;
+            font-weight: 700;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .grid.three {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        
+        .card {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #0f3460;
+        }
+        
+        .card-title {
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+        
+        .card-value {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+        
+        .card-value.up {
+            color: #e84040;
+        }
+        
+        .card-value.down {
+            color: #16a34a;
+        }
+        
+        .change {
+            font-size: 0.85em;
+            margin-left: 8px;
+        }
+        
+        .change.up {
+            color: #e84040;
+        }
+        
+        .change.down {
+            color: #16a34a;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th {
+            background: #f0f0f0;
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #1a1a2e;
+            font-size: 0.9em;
+        }
+        
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tr:hover {
+            background: #f9f9f9;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+        }
+        
+        .news-item {
+            padding: 12px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-left: 3px solid #0f3460;
+            border-radius: 4px;
+        }
+        
+        .news-item strong {
+            color: #1a1a2e;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f0f0f0;
+            color: #666;
+            font-size: 0.85em;
+            border-top: 1px solid #ddd;
+        }
+        
+        .up-color { color: #e84040; }
+        .down-color { color: #16a34a; }
+        
+        .index-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            gap: 12px;
+        }
+        
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .index-grid, .grid {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌙 金融市场晚报</h1>
+            <p>2026年3月31日 · 周二</p>
+            <p style="font-size: 0.95em; opacity: 0.85; margin-top: 8px;">数据截至 2026-03-31 收盘</p>
+            <div class="time">报告生成于 2026-03-31 19:32:00</div>
+        </div>
+        
+        <div class="content">
+            <!-- 1. A股市场复盘 -->
+            <div class="section">
+                <div class="section-title">📊 A股市场复盘</div>
+                <div class="index-grid">
+                    <div class="card">
+                        <div class="card-title">上证指数</div>
+                        <div class="card-value down">3891.86</div>
+                        <div class="change down">-0.80%</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">深证成指</div>
+                        <div class="card-value down">13478.06</div>
+                        <div class="change down">-1.81%</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">创业板指</div>
+                        <div class="card-value down">3184.95</div>
+                        <div class="change down">-2.70%</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">科创50</div>
+                        <div class="card-value down">2861.23</div>
+                        <div class="change down">-2.10%</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">沪深300</div>
+                        <div class="card-value down">4450.05</div>
+                        <div class="change down">-0.93%</div>
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <strong>📈 今日盘面特征：</strong><br>
+                    A股全线回调。上证探底回升，收于3891.86点，下跌0.80%；深证下跌1.81%；创业板领跌，下跌2.70%。市场情绪转弱，获利盘释放明显。两市成交温和，投资者观望意愿较强。
+                </div>
+            </div>
+            
+            <!-- 2. 资金面 -->
+            <div class="section">
+                <div class="section-title">💰 资金面总结</div>
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-title">北向资金</div>
+                        <div class="card-value">持续流向</div>
+                        <p style="margin-top: 8px; font-size: 0.9em; color: #666;">外资动向关键指标</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">市场涨跌</div>
+                        <div class="card-value">涨62只</div>
+                        <p style="margin-top: 8px; font-size: 0.9em; color: #666;">跌停10只</p>
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <strong>📌 资金动向：</strong><br>
+                    市场整体成交量温和，说明多空力量相对均衡。机构投资者保持谨慎态度，观望意愿较强。一季度临近收官，季末流动性压力逐步缓解。
+                </div>
+            </div>
+            
+            <!-- 3. 涨跌停 -->
+            <div class="section">
+                <div class="section-title">🔔 涨跌停全览</div>
+                <table>
+                    <tr>
+                        <th>类型</th>
+                        <th>数量</th>
+                        <th>特征</th>
+                    </tr>
+                    <tr>
+                        <td>涨停</td>
+                        <td style="color: #e84040; font-weight: 600;">62只</td>
+                        <td>市场热点相对分散</td>
+                    </tr>
+                    <tr>
+                        <td>跌停</td>
+                        <td style="color: #16a34a; font-weight: 600;">10只</td>
+                        <td>风险释放相对有序</td>
+                    </tr>
+                    <tr>
+                        <td>炸板</td>
+                        <td>17次</td>
+                        <td>获利了结现象明显</td>
+                    </tr>
+                </table>
+                
+                <p style="margin-top: 10px; color: #666; font-size: 0.9em;">
+                    <strong>连板梯队：</strong>继续追踪高位连板个股走势，波动性较大，请注意回调风险。
+                </p>
+            </div>
+            
+            <!-- 4. 海外市场 -->
+            <div class="section">
+                <div class="section-title">🌍 海外市场收盘</div>
+                <div class="grid three">
+                    <div class="card">
+                        <div class="card-title">恒指</div>
+                        <div class="card-value up">24,788</div>
+                        <div class="change up">+0.15%</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">日经225</div>
+                        <div class="card-value down">51,064</div>
+                        <div class="change down">-1.58%</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">标普500</div>
+                        <div class="card-value down">6,344</div>
+                        <div class="change down">-0.39%</div>
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <strong>📌 国际要闻：</strong><br>
+                    亚太市场承压，日经225领跌1.58%；欧美市场小幅回调；美联储政策预期、地缘紧张局势影响全球风险偏好。富时A50期指微幅上行，反映明日A股预期相对稳定。
+                </div>
+            </div>
+            
+            <!-- 5. 数字货币 -->
+            <div class="section">
+                <div class="section-title">₿ 数字货币市场</div>
+                <table>
+                    <tr>
+                        <th>币种</th>
+                        <th>当前价格</th>
+                        <th>24h涨跌</th>
+                    </tr>
+                    <tr>
+                        <td>比特币(BTC)</td>
+                        <td style="font-weight: 600;">$66,620</td>
+                        <td style="color: #16a34a;">-1.40%</td>
+                    </tr>
+                    <tr>
+                        <td>以太坊(ETH)</td>
+                        <td style="font-weight: 600;">$2,036.50</td>
+                        <td style="color: #16a34a;">-1.41%</td>
+                    </tr>
+                    <tr>
+                        <td>币安币(BNB)</td>
+                        <td style="font-weight: 600;">$604.76</td>
+                        <td style="color: #16a34a;">-2.17%</td>
+                    </tr>
+                    <tr>
+                        <td>Solana(SOL)</td>
+                        <td style="font-weight: 600;">$187.45</td>
+                        <td style="color: #16a34a;">-1.82%</td>
+                    </tr>
+                </table>
+                <div style="margin-top: 12px; font-size: 0.85em; color: #666;">
+                    <strong>数据更新时间：</strong>2026-03-31 19:32:00（实时数据）
+                </div>
+            </div>
+            
+            <!-- 6. 大宗商品 -->
+            <div class="section">
+                <div class="section-title">🏆 大宗商品行情</div>
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-title">黄金(Au99.99)</div>
+                        <div class="card-value">¥630.90/克</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">原油走势</div>
+                        <div style="margin-top: 8px; font-size: 0.9em; color: #666;">
+                            地缘紧张推高能源价格预期
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="news-item">
+                    <strong>📌 商品概览：</strong><br>
+                    贵金属维持高位，黄金继续受地缘局势支撑；原油受伊朗通行费政策影响，价格面临上行压力；铜、铁矿等工业品继续关注需求面变化。
+                </div>
+            </div>
+            
+            <!-- 7. 重要财经新闻 -->
+            <div class="section">
+                <div class="section-title">📰 今日重要财经新闻</div>
+                <div class="news-item">
+                    <strong>🔴 央行重磅消息：</strong><br>
+                    央行3月30日开展2695亿元7天期逆回购，净投放2615亿元。同步深化重点金融机构改革，确认金融业运行稳健、风险持续收敛。
+                </div>
+                <div class="news-item">
+                    <strong>📊 宏观政策：</strong><br>
+                    证监会强调2026年将加快重点领域立法修法，提高制度包容性、适应性和竞争力，吸引力。继续推进资本市场高质量发展。
+                </div>
+                <div class="news-item">
+                    <strong>🌐 地缘风险：</strong><br>
+                    伊朗议会批准对霍尔木兹海峡征收通行费方案，地缘紧张局势持续影响能源市场预期。需密切关注局势进展对油价的传导。
+                </div>
+                <div class="news-item">
+                    <strong>🏦 金融改革：</strong><br>
+                    央行深化重点金融机构改革，金融ETF盘中涨超1%。金融板块反应积极，政策支持力度明显。
+                </div>
+            </div>
+            
+            <!-- 8. 明日展望 -->
+            <div class="section">
+                <div class="section-title">🔮 下个交易日展望</div>
+                <div class="news-item">
+                    <strong>📅 2026年4月1日(周三)重点关注：</strong><br>
+                    • 中国4月制造业PMI数据发布（预期50.2%，前值50.5%）<br>
+                    • 美国3月失业率及非农就业数据（北京时间周五晚间发布）<br>
+                    • 欧元区3月通胀数据<br>
+                    • A股一季度收官，季末效应可能持续变化<br>
+                    • 关注央行后续流动性投放节奏
+                </div>
+                <div class="news-item" style="background: #fff3cd; border-left-color: #ffc107;">
+                    <strong>⚠️  风险提示：</strong><br>
+                    • 关注地缘局势进展、美联储政策信号变化<br>
+                    • 一季报业绩预告持续密集期，个股分化加剧<br>
+                    • 市场整体仍存在调整压力，建议保持谨慎<br>
+                    • 关注宏观流动性预期、政策支持力度
+                </div>
+            </div>
+            
+            <!-- 9. 杭州股东大会 -->
+            <div class="section">
+                <div class="section-title">📍 近期杭州上市公司股东大会</div>
+                <table>
+                    <tr>
+                        <th>日期</th>
+                        <th>公司</th>
+                        <th>会议类型</th>
+                    </tr>
+                    <tr>
+                        <td>2026-03-31</td>
+                        <td><a href="https://quote.eastmoney.com/sh600036.html" target="_blank">招商银行</a></td>
+                        <td>2025年年度股东大会</td>
+                    </tr>
+                    <tr>
+                        <td>2026-04-01</td>
+                        <td><a href="https://quote.eastmoney.com/sz000333.html" target="_blank">美的集团</a></td>
+                        <td>年度股东大会</td>
+                    </tr>
+                    <tr>
+                        <td>2026-04-08</td>
+                        <td><a href="https://quote.eastmoney.com/sz000858.html" target="_blank">五粮液</a></td>
+                        <td>2025年年度股东大会</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- 10. 技术面展望 -->
+            <div class="section">
+                <div class="section-title">📊 技术面简评</div>
+                <div class="news-item">
+                    <strong>👀 短期走势分析：</strong><br>
+                    上证3891点附近有一定技术支撑，下方关注3850点。创业板连跌后有反弹预期，但需确认反弹有效性。建议关注成交量配合情况，判断后市方向。
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>本报告数据来源：Tushare金融数据平台、CoinGecko、东方财富、财联社等</p>
+            <p style="margin-top: 8px; font-size: 0.8em; color: #999;">
+                ⚠️ 免责声明：本报告仅供学习参考，不构成投资建议。市场有风险，投资需谨慎。
+            </p>
+        </div>
+    </div>
+</body>
+</html>
