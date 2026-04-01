@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金融市场晚报 - 2026年4月1日</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #333;
+            line-height: 1.65;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 10px 36px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .header p {
+            font-size: 1.06em;
+            opacity: 0.92;
+            margin: 4px 0;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 34px;
+        }
+
+        .section-title {
+            font-size: 1.28em;
+            color: #1a1a2e;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #0f3460;
+            font-weight: 700;
+        }
+
+        .index-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .grid.three {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .card {
+            padding: 16px;
+            background: #f8fafc;
+            border-radius: 10px;
+            border-left: 4px solid #0f3460;
+        }
+
+        .card-title {
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .card-value {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .up {
+            color: #e84040;
+        }
+
+        .down {
+            color: #16a34a;
+        }
+
+        .neutral {
+            color: #334155;
+        }
+
+        .change {
+            font-size: 0.86em;
+            margin-top: 4px;
+        }
+
+        .news-item {
+            padding: 13px 14px;
+            margin: 10px 0;
+            background: #f8fafc;
+            border-left: 3px solid #0f3460;
+            border-radius: 6px;
+        }
+
+        .news-item strong {
+            color: #1a1a2e;
+        }
+
+        .news-item.warn {
+            background: #fff7ed;
+            border-left-color: #f97316;
+        }
+
+        .news-item.note {
+            background: #eff6ff;
+            border-left-color: #2563eb;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            background: #fff;
+        }
+
+        th {
+            background: #f1f5f9;
+            padding: 11px 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #1a1a2e;
+            font-size: 0.92em;
+        }
+
+        td {
+            padding: 11px 10px;
+            border-bottom: 1px solid #e5e7eb;
+            vertical-align: top;
+        }
+
+        tr:hover {
+            background: #fafafa;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 999px;
+            font-size: 12px;
+            margin-right: 6px;
+            background: #e2e8f0;
+            color: #334155;
+        }
+
+        .tag.hot {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+
+        .tag.cool {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 22px;
+            background: #f1f5f9;
+            color: #64748b;
+            font-size: 0.86em;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul.compact {
+            margin-left: 18px;
+            color: #475569;
+        }
+
+        ul.compact li {
+            margin: 6px 0;
+        }
+
+        .subtle {
+            color: #64748b;
+            font-size: 0.88em;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 900px) {
+            .index-grid,
+            .grid,
+            .grid.three {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 1.6em;
+            }
+
+            .content {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌙 金融市场晚报</h1>
+            <p>2026年4月1日 · 周三</p>
+            <p style="font-size: 0.95em; opacity: 0.85; margin-top: 8px;">A股数据截至 2026-04-01 收盘，海外与数字货币使用最新可得公开数据</p>
+            <div style="font-size:0.78em;opacity:0.75;margin-top:6px;letter-spacing:0.5px;">报告生成于 2026-04-01 19:47:00</div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <div class="section-title">📊 1. A股市场复盘</div>
+                <div class="index-grid">
+                    <div class="card">
+                        <div class="card-title">上证指数</div>
+                        <div class="card-value up">3948.55</div>
+                        <div class="change up">+1.46%</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">深证成指</div>
+                        <div class="card-value up">13706.52</div>
+                        <div class="change up">+1.70%</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">创业板指</div>
+                        <div class="card-value up">3247.52</div>
+                        <div class="change up">+1.96%</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">科创50</div>
+                        <div class="card-value up">1298.20</div>
+                        <div class="change up">+3.33%</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">沪深300</div>
+                        <div class="card-value up">4526.07</div>
+                        <div class="change up">+1.71%</div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <strong>📈 今日盘面特征：</strong><br>
+                    三大指数全线反弹，科技成长明显强于权重蓝筹，科创50领涨。全市场约 4495 只个股上涨、887 只下跌、103 只平盘，赚钱效应显著修复。医药、算力、游戏等成长方向接力，电力、光伏、航天装备等偏弱，市场风格继续向高弹性板块倾斜。
+                </div>
+                <div class="news-item note">
+                    <strong>🧭 收盘一句话：</strong><br>
+                    今天属于“放量普涨 + 科技医药共振”的修复日，指数和情绪同步回暖，短线资金风险偏好明显提升。
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">💰 2. 资金面总结</div>
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-title">两市成交额</div>
+                        <div class="card-value up">20137.94 亿元</div>
+                        <div class="subtle">较前一交易日 +1.00%，量能继续站在 2 万亿上方</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">主力资金净额</div>
+                        <div class="card-value up">+173.43 亿元</div>
+                        <div class="subtle">大单净流入 243.70 亿元，小单净流入 56.86 亿元</div>
+                    </div>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>维度</th>
+                        <th>数据</th>
+                        <th>解读</th>
+                    </tr>
+                    <tr>
+                        <td>沪股通成交额</td>
+                        <td>1097.92 亿元</td>
+                        <td>北向交易活跃，权重与成长方向都有参与</td>
+                    </tr>
+                    <tr>
+                        <td>深股通成交额</td>
+                        <td>1193.89 亿元</td>
+                        <td>深市弹性资产更受资金偏好</td>
+                    </tr>
+                    <tr>
+                        <td>中单资金</td>
+                        <td class="down">-230.29 亿元</td>
+                        <td>部分跟风盘选择兑现，说明分歧并未完全消失</td>
+                    </tr>
+                    <tr>
+                        <td>上涨家数占比</td>
+                        <td class="up">81.95%</td>
+                        <td>普涨格局明显，情绪端修复强于指数端</td>
+                    </tr>
+                </table>
+
+                <div class="news-item">
+                    <strong>📌 资金结论：</strong><br>
+                    量能略增、主力回流，说明今天不是纯粹缩量反抽。只是北向这组公开字段更适合解读为成交活跃度，而非净买入额；真正的风险提示在于中单仍显著流出，短线高位股明天大概率会出现分化检验。
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">🔔 3. 涨跌停全览</div>
+                <table>
+                    <tr>
+                        <th>项目</th>
+                        <th>数量</th>
+                        <th>备注</th>
+                    </tr>
+                    <tr>
+                        <td>涨停</td>
+                        <td class="up"><strong>56 只</strong></td>
+                        <td>创新药、数据中心、算力链活跃</td>
+                    </tr>
+                    <tr>
+                        <td>跌停</td>
+                        <td class="down"><strong>6 只</strong></td>
+                        <td>主要集中在电力、电网设备等弱势方向</td>
+                    </tr>
+                    <tr>
+                        <td>炸板</td>
+                        <td><strong>38 次</strong></td>
+                        <td>追高资金仍需防守，板上分歧并不小</td>
+                    </tr>
+                </table>
+
+                <div class="grid three" style="margin-top: 16px;">
+                    <div class="card">
+                        <div class="card-title">连板龙头</div>
+                        <div class="card-value up">津药药业</div>
+                        <div class="change up">4 连板</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">二连板代表</div>
+                        <div class="card-value up">通达股份 / 凯莱英</div>
+                        <div class="change up">2 连板</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">ST方向活跃</div>
+                        <div class="card-value neutral">ST英飞拓 / ST葫芦娃</div>
+                        <div class="change">短线资金偏博弈</div>
+                    </div>
+                </div>
+
+                <div class="news-item note">
+                    <strong>🔥 热门涨停概念：</strong><br>
+                    <span class="tag hot">数据中心 14 只涨停</span>
+                    <span class="tag hot">创新药 13 只涨停</span>
+                    <span class="tag hot">东数西算 11 只涨停</span>
+                    <span class="tag hot">芯片概念 10 只涨停</span>
+                    <span class="tag hot">DeepSeek 概念 10 只涨停</span>
+                </div>
+                <div class="subtle">连板梯队整体并不厚，说明题材热度在扩散，但高度股还没形成非常强的一致性。</div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">🏭 4. 行业与板块表现</div>
+                <div class="grid">
+                    <div>
+                        <table>
+                            <tr>
+                                <th>领涨行业</th>
+                                <th>涨跌幅</th>
+                                <th>观察</th>
+                            </tr>
+                            <tr><td>游戏Ⅱ</td><td class="up">+6.08%</td><td>弹性最强，情绪修复属性明显</td></tr>
+                            <tr><td>酒店餐饮</td><td class="up">+5.86%</td><td>消费方向补涨</td></tr>
+                            <tr><td>医疗服务</td><td class="up">+5.35%</td><td>创新药扩散到医疗服务链</td></tr>
+                            <tr><td>化学制药</td><td class="up">+4.96%</td><td>医药主线持续强化</td></tr>
+                            <tr><td>生物制品</td><td class="up">+4.44%</td><td>高弹性医药资产受追捧</td></tr>
+                            <tr><td>通信设备</td><td class="up">+3.72%</td><td>算力链继续活跃</td></tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table>
+                            <tr>
+                                <th>偏弱行业</th>
+                                <th>涨跌幅</th>
+                                <th>观察</th>
+                            </tr>
+                            <tr><td>航天装备Ⅱ</td><td class="down">-1.75%</td><td>前期强势方向回吐</td></tr>
+                            <tr><td>光伏设备</td><td class="down">-1.08%</td><td>景气预期仍需验证</td></tr>
+                            <tr><td>乘用车</td><td class="down">-1.02%</td><td>资金偏好转向更高弹性题材</td></tr>
+                            <tr><td>油服工程</td><td class="down">-0.61%</td><td>商品相关链条分化</td></tr>
+                            <tr><td>电力</td><td class="down">-0.56%</td><td>高位补跌特征明显</td></tr>
+                            <tr><td>公用事业</td><td class="down">-0.52%</td><td>防御属性相对失色</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <strong>📌 板块轮动判断：</strong><br>
+                    今天最强的是“医药 + 算力 + 游戏”三条线，既有政策和题材刺激，也有高弹性资金回流特征。弱势板块主要集中在前期防御和部分景气争议方向，说明市场仍在主动做风格切换，而不是全面风险偏好提升到无差别普涨。
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">⭐ 5. 亮点个股</div>
+                <table>
+                    <tr>
+                        <th>个股</th>
+                        <th>表现</th>
+                        <th>成交额</th>
+                        <th>看点</th>
+                    </tr>
+                    <tr>
+                        <td>津药药业 (600488.SH)</td>
+                        <td class="up">4 连板</td>
+                        <td>--</td>
+                        <td>当日连板高度股，医药情绪锚定标的</td>
+                    </tr>
+                    <tr>
+                        <td>天孚通信 (300394.SZ)</td>
+                        <td class="up">+10.52%</td>
+                        <td>136.80 亿元</td>
+                        <td>成交额居前，通信设备方向的强势核心</td>
+                    </tr>
+                    <tr>
+                        <td>广生堂 (300436.SZ)</td>
+                        <td class="up">+20.00%</td>
+                        <td>17.75 亿元</td>
+                        <td>20CM 强势标的，医药弹性代表</td>
+                    </tr>
+                    <tr>
+                        <td>宏景科技 (301396.SZ)</td>
+                        <td class="up">+16.95%</td>
+                        <td>25.95 亿元</td>
+                        <td>高换手高弹性，科技成长情绪代表</td>
+                    </tr>
+                    <tr>
+                        <td>阳光电源 (300274.SZ)</td>
+                        <td class="down">-10.82%</td>
+                        <td>225.41 亿元</td>
+                        <td>全天成交额第一，但大跌反映光伏板块承压</td>
+                    </tr>
+                </table>
+                <div class="subtle">以上个股均来自当日行情、涨停和成交额数据；看点仅基于当日市场行为描述，不扩展未经验证的基本面结论。</div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">🌍 6. 海外市场收盘</div>
+                <div class="grid three">
+                    <div class="card">
+                        <div class="card-title">恒生指数（4月1日）</div>
+                        <div class="card-value up">25294.03</div>
+                        <div class="change up">+2.04%</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">恒生科技（4月1日）</div>
+                        <div class="card-value up">4756.45</div>
+                        <div class="change up">+2.29%</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">日经225（4月1日）</div>
+                        <div class="card-value up">53739.68</div>
+                        <div class="change up">+5.24%</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">韩国综指（4月1日）</div>
+                        <div class="card-value up">5478.70</div>
+                        <div class="change up">+8.44%</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">标普500（3月31日）</div>
+                        <div class="card-value up">6528.52</div>
+                        <div class="change up">+2.91%</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">道琼斯（3月31日）</div>
+                        <div class="card-value up">46341.51</div>
+                        <div class="change up">+2.49%</div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <strong>📌 海外市场观察：</strong><br>
+                    亚太市场今天整体偏强，港股科技和日韩市场同步反弹；美股使用最新可得收盘数据，也处于明显修复状态。海外风险资产回暖，对今天A股成长方向形成一定情绪映射，但考虑到美国数据日期尚未更新到 4 月 1 日，明天仍需防止隔夜波动带来预期开差。
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">🏆 7. 大宗商品行情</div>
+                <div class="grid">
+                    <div>
+                        <table>
+                            <tr>
+                                <th>品种</th>
+                                <th>价格</th>
+                                <th>变化</th>
+                            </tr>
+                            <tr><td>国际原油</td><td>98.38 美元/桶</td><td class="down">-2.96%</td></tr>
+                            <tr><td>国际黄金</td><td>4749.04 美元/盎司</td><td class="up">+1.59%</td></tr>
+                            <tr><td>上金所 iAu99.99</td><td>1044.55 元/克</td><td class="up">+31.73 元</td></tr>
+                            <tr><td>沪铜主力 CU2605</td><td>97030 元/吨</td><td class="up">+1470 元</td></tr>
+                            <tr><td>螺纹钢主力 RB2605</td><td>3120 元/吨</td><td class="down">-10 元</td></tr>
+                            <tr><td>铁矿主力 I2605</td><td>812 元/吨</td><td class="up">+1 元</td></tr>
+                        </table>
+                    </div>
+                    <div>
+                        <div class="news-item">
+                            <strong>🛢️ 商品解读：</strong><br>
+                            国际原油 4 月 1 日最新公开价格回落到 98.38 美元/桶，但仍处于高位区间；黄金则继续走强，国内现货金价同步抬升。商品市场呈现“油价高位震荡、金价偏强、工业品分化”的典型结构。
+                        </div>
+                        <div class="news-item note">
+                            <strong>🔍 对A股的映射：</strong><br>
+                            黄金链偏强有利于资源类情绪维持；铜价走高对应部分有色和设备链景气预期；而原油回落有助于缓和输入型通胀担忧，但地缘不确定性还没真正解除。
+                        </div>
+                        <div class="subtle">国际原油与黄金来自公开网页最新可得数据；国内商品来自期货/上金所数据。</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">₿ 8. 数字货币市场</div>
+                <table>
+                    <tr>
+                        <th>币种</th>
+                        <th>最新价格</th>
+                        <th>24h 涨跌</th>
+                        <th>观察</th>
+                    </tr>
+                    <tr><td>比特币 BTC</td><td>$68,548</td><td class="up">+2.72%</td><td>风险偏好回暖，龙头币反弹</td></tr>
+                    <tr><td>以太坊 ETH</td><td>$2,133.71</td><td class="up">+4.61%</td><td>弹性强于 BTC</td></tr>
+                    <tr><td>BNB</td><td>$614.56</td><td class="up">+1.51%</td><td>平台币跟涨</td></tr>
+                    <tr><td>XRP</td><td>$1.35</td><td class="up">+2.86%</td><td>主流币普遍修复</td></tr>
+                </table>
+                <div class="news-item">
+                    <strong>📌 市场状态：</strong><br>
+                    主流币种普遍上涨，以太坊弹性更强，说明加密市场短线风险偏好也在回暖。若后续美股科技和美元波动收敛，数字资产端有望继续维持反弹结构；但这个市场波动一向很大，不适合拿 A 股节奏去简单类比。
+                </div>
+                <div class="subtle">数据更新时间：2026-04-01 晚间，来自 CoinGecko 实时公开数据。</div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">📰 9. 今日重要财经新闻</div>
+                <div class="news-item">
+                    <strong>① 央行公开市场：</strong><br>
+                    中国货币网最新公开信息显示，2026 年 4 月 1 日央行未开展逆回购或 MLF 等公开市场操作。季初时点选择按兵不动，本身就说明短端流动性暂时没有明显被动收紧压力。
+                </div>
+                <div class="news-item">
+                    <strong>② 科创与医药成为日内主线：</strong><br>
+                    科创50 上涨 3.33%，创新药概念 13 只涨停、数据中心 14 只涨停，显示今天最强的并不是传统权重，而是高弹性题材与成长赛道。
+                </div>
+                <div class="news-item">
+                    <strong>③ 大宗商品维持高波动：</strong><br>
+                    最新公开行情显示，国际黄金 4 月 1 日上涨 1.59%，国际原油回落 2.96%。油金分化意味着全球避险与供需预期并存，对资源股和航运、化工等方向都会继续产生扰动。
+                </div>
+                <div class="news-item">
+                    <strong>④ 市场情绪显著修复：</strong><br>
+                    两市成交额回到 2.01 万亿元，主力净流入 173.43 亿元，说明今天不仅指数反弹，资金面也给了确认。只是炸板仍有 38 次，明天会进入“强者恒强还是高位分歧”的验证阶段。
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">🔮 10. 明日展望</div>
+                <div class="news-item">
+                    <strong>📅 4 月 2 日重点观察：</strong><br>
+                    • 量能能否继续站稳 2 万亿元上方；<br>
+                    • 创新药、算力、游戏三条主线能否延续，还是只剩局部龙头；<br>
+                    • 光伏、电力等弱势板块会否止跌，决定市场是否进入更均衡修复；<br>
+                    • 海外风险资产若继续偏强，有利于A股情绪延续；反之容易造成高开低走。
+                </div>
+                <div class="news-item warn">
+                    <strong>⚠️ 风险提示：</strong><br>
+                    已调用的中美经济日历接口对 4 月 2 日均返回“暂无数据”，因此本期不列未经验证的宏观日程。真正要防的是情绪升温后高位股一致性过强，一旦量能跟不上，次日盘中分歧会来得很快。
+                </div>
+                <div class="news-item note">
+                    <strong>🧠 策略感受：</strong><br>
+                    明天更像“去伪存真”的一天。今天可以把它定义为修复日，但只有当成交额、连板高度和核心趋势股能同时续强，这轮反弹才算站稳。
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">📍 11. 近 1 个月杭州上市公司股东大会</div>
+                <div class="news-item note">
+                    <strong>统计口径：</strong><br>
+                    以东方财富股东大会公开接口筛选今日起未来 1 个月、召开地点包含“杭州”的上市公司会议，共检索到 <strong>21 家</strong>。
+                </div>
+                <table>
+                    <tr>
+                        <th>日期</th>
+                        <th>公司</th>
+                        <th>代码</th>
+                        <th>会议地点</th>
+                    </tr>
+                    <tr><td>2026-04-01</td><td><a href="https://quote.eastmoney.com/sz300645.html" target="_blank">正元智慧</a></td><td>300645.SZ</td><td>杭州市余杭区舒心路359号正元智慧大厦A幢18层</td></tr>
+                    <tr><td>2026-04-02</td><td><a href="https://quote.eastmoney.com/sz000672.html" target="_blank">上峰水泥</a></td><td>000672.SZ</td><td>杭州市西湖区文二西路738号西溪乐谷创意产业园1幢E单元公司会议室</td></tr>
+                    <tr><td>2026-04-03</td><td><a href="https://quote.eastmoney.com/sz002115.html" target="_blank">三维通信</a></td><td>002115.SZ</td><td>杭州市滨江区火炬大道581号三维大厦C座2楼会议室</td></tr>
+                    <tr><td>2026-04-03</td><td><a href="https://quote.eastmoney.com/sh600776.html" target="_blank">东方通信</a></td><td>600776.SH</td><td>杭州市滨江区东信大道66号东方通信科技园A楼210会议室</td></tr>
+                    <tr><td>2026-04-03</td><td><a href="https://quote.eastmoney.com/sh603558.html" target="_blank">健盛集团</a></td><td>603558.SH</td><td>杭州萧山经济技术开发区金一路111号公司六楼会议室</td></tr>
+                    <tr><td>2026-04-03</td><td><a href="https://quote.eastmoney.com/sh603373.html" target="_blank">安邦护卫</a></td><td>603373.SH</td><td>杭州市西湖区转塘街道枫桦路六号之江财富中心E8楼公司三楼会议室</td></tr>
+                    <tr><td>2026-04-08</td><td><a href="https://quote.eastmoney.com/sh603558.html" target="_blank">健盛集团</a></td><td>603558.SH</td><td>杭州萧山经济技术开发区金一路111号公司六楼会议室</td></tr>
+                    <tr><td>2026-04-08</td><td><a href="https://quote.eastmoney.com/sh688255.html" target="_blank">凯尔达</a></td><td>688255.SH</td><td>杭州市萧山区长鸣路778号公司会议室</td></tr>
+                </table>
+                <div class="subtle">表格仅展示最临近的 8 场会议，完整范围为近 1 个月杭州地区相关会议。</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>数据来源：Tushare、CoinGecko、东方财富、Trading Economics、中国货币网等公开来源</p>
+            <p style="margin-top: 8px; font-size: 0.8em; color: #94a3b8;">⚠️ 免责声明：本报告仅供学习与信息整理使用，不构成任何投资建议。市场有风险，决策需谨慎。</p>
+        </div>
+    </div>
+</body>
+</html>
